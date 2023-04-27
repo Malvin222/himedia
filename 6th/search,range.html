@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+	<script>
+	//현재창. 폼이름. 오브젝트명. 속성 = 값
+		function rangeSet(value) {
+			document.frm2.engValue.value = value;
+		}
+	</script>
+
+ <body>
+ 	<form name="frm1" method="GET" action="http://www.goolge.com/search">
+	검색 <input type="text" name="q">
+	<input type="submit" value="검색">
+	<br>
+	</form>
+	<form name="frm1" method="get" action="https://search.naver.com/search.naver">
+	검색 <input type="search" name="query">
+	<input type="submit" value="검색">
+	</form>
+	
+	<br>
+	<form name="frm2" method="post">
+	영어점수 <input type="text" name="engValue" value="0"><br>
+	<input type="range" name="eng" min="0" max="100" onchange="rangeSet(this.value)">
+	</form>
+ </body>
+</html>

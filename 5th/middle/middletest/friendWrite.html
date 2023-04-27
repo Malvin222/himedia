@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>friendWrite.html</title>
+ </head>
+  <style>
+	body {
+		font-size:9pt;
+		font-family:맑은고딕;
+		}
+	a {
+	 color:#c0bebf;
+	 text-decoration:none;
+	 }
+</style>
+ <body>
+ <form name="friendWrite" method="post" action="friendWrite.php">
+   <table border="0" bgcolor="#818181" cellpadding="0" cellspacing="0">
+ <tr><td>
+<table border="0" width="800" height="350" cellpadding="0" cellspacing="0 bgcolor="9BCE2E">
+	<tr bgcolor="#818181">
+		<th width="100%" height="80" align="center"><font size="4" color="#ffffff">친구관리</font></th>
+	</tr>
+	<tr bgcolor="#000000">
+		<td height="30"><font color="#c0bebf">
+		<a href="friendWrite.html">회원등록</a> &nbsp
+		<a href="friendList.html">회원목록조회</a> &nbsp
+		<a href="friendMyList.html">친구현황조회</a> &nbsp
+		<a href="friendIndex.html">홈으로</a></font></td>
+	</tr>
+	<tr bgcolor="9BCE2E">
+		<th><br>친구 등록<br><br>
+		<table border="1" align="center" width="500"cellspacing="0">
+		<tr>
+			<td align="center" bgcolor="F8F896">회원번호</td>
+			<td align="left"><input type="text" name="number"></td>
+			</tr>
+			<tr>
+			<td align="center" bgcolor="F8F896">회원ID</td>
+			<td align="left"><input type="text" name="ID"></td>
+			</tr>
+			<tr>
+			<td align="center" bgcolor="F8F896">이름</td>
+			<td align="left"><input type="text" name="name"></td>
+			</tr>
+			<tr height="100">
+			<td align="center" bgcolor="F8F896">등급</td>
+			<td align="left">
+			<select name="year" size="4">
+			<option value="특별회원">특별회원</option>
+			<option value="우수회원">우수회원</option>
+			<option value="일반회원">일반회원</option>
+			</td>
+			</tr>
+			<tr>
+			<td align="center" bgcolor="F8F896" >취미</td>
+			<td align="left">
+			<input type="checkbox" name="read">독서
+			<input type="checkbox" name="sports">운동
+			<input type="checkbox" name="movie">영화
+			</td>
+			</tr>
+			<tr>
+			<td align="center" bgcolor="F8F896">등록일자</td>
+			<td align="left"><input type="date" name="date">
+			</td>
+		</tr>
+	</table>
+	<input type="submit" name="join" value="등록">&nbsp;&nbsp;
+	<input type="button" name="rist" value="조회">
+	</th>
+	</tr>
+  </table>
+  </td></tr>
+  </table>
+  </form>
+ </body>
+</html>
