@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+	<script>
+	function fn_result1(){
+	
+		var n1 = Number(document.frm.a1.value);
+		var n2 = Number(document.frm.a2.value);
+		var result= n1+n2;
+		alert(n1+"+"+n2+"="+result);
+	}
+	function fn_result2(){
+	
+		var n1 = Number(document.frm.a1.value);
+		var n2 = Number(document.frm.a2.value);
+		var result= n1-n2;
+		alert(n1+"-"+n2+"="+result);
+	}
+	function fn_result3(){
+	
+		var n1 = Number(document.frm.a1.value);
+		var n2 = Number(document.frm.a2.value);
+		var result= n1*n2;
+		alert(n1+"x"+n2+"="+result);
+	}
+	function fn_result4(){
+	
+		var n1 = Number(document.frm.a1.value);
+		var n2 = Number(document.frm.a2.value);
+		var result= n1/n2;
+		alert(n1+"/"+n2+"="+result);
+	}
+	</script>
+
+ <body>
+	
+	<form name="frm">
+
+	<input type="number" name="a1" size="3"> +
+	<input type="number" name="a2" size="3"> =
+	<input type="button" value="더하기" onclick="fn_result1()">
+	<input type="button" value="빼기" onclick="fn_result2()">
+	<input type="button" value="곱하기" onclick="fn_result3()">
+	<input type="button" value="나누기" onclick="fn_result4()">
+ </body>
+</html>

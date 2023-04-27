@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+	 <script>
+		function fn_test(){
+			alert("TEST");
+		}
+		function fn_name(name){ //매개변수 : 외부 데이터값(ex:body값)을 받는 변수
+			alert(name);
+		}
+		function fn_sum(a,b,c){
+			var sum= Number(a)+Number(b)+Number(c);
+			alert(sum);
+		}
+		function fn_mul(a,b,c){
+			var result = Number(a)*Number(b)*Number(c);
+			alert(result);
+		}
+	 </script>
+ <body>
+	<input type="button" value="알림" onclick="fn_test()">
+	<input type="button" value="이름출력" onclick="fn_name('홍길동')">
+	<input type="button" value="합계" onclick="fn_sum('30','50','100')">
+	<input type="button" value="곱" onclick="fn_mul('10','20','30')">
+ </body>
+</html>

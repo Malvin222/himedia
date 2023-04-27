@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+	<script>
+		var email="vin412@naver.com";
+		var email1=email.split("@");
+		var len=email1[0].length;
+		var last=email[1]
+		
+		if(email.indexOf("@")>=0){
+			document.write("올바른 이메일입니다.<br>");
+		}else{document.write("올바른 이메일이 아닙니다.")}
+
+		document.write(email.replace("naver","korea")+"<br>");
+		document.write(email1[0]+"<br>"+email1[1]+"<br>");
+		document.write(email1[0].length+"<br>");
+		document.write(email1[0].charAt(len-1)+"<hr>");
+
+		var str="외국인 시설과 내국인 시설 모두 좋은 시설이다."
+		var str1=str.split("시설");
+
+		document.write(str1.length-1+"<hr>");
+		
+	/*	var str="외국인 시설과 내국인 시설 모두 좋은 시설이다."
+		var st2=str.split(" ");
+		var cnt=0;
+		for(var i=0;i<st2.length;i++){
+			if(st2[i].indetOf("시설")>=0);{
+				cnt++;
+			}
+	}
+		document.write(cnt);
+	*/
+	
+		
+	</script>
+
+ <body>
+
+  </form>
+ </body>
+</html>

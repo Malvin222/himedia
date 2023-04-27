@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+	<script>
+
+		var value="가";
+		switch(value){
+			case "1": document.write("500원");
+			break;
+			case "2": document.write("1000원");
+			break;
+			case "3": document.write("심부름");
+			break;
+			case "4": document.write("2000원");
+			break;
+			case "5": document.write("축");
+			break;
+			case "가": document.write("메롱");
+			break;
+			default : document.write("다시");
+		}
+		document.write("<hr>");
+		for (var i=1 ; i<=31 ; i++){
+				document.write(i+"일");
+			}
+		document.write("<hr>");
+		
+		for(var i = 1; i<=100 ; i++){
+			if( i % 2 ==1){
+				document.write(i+" ");
+			}
+		}
+		document.write("<hr>");
+		for(var i=1; i<=100; i++){
+			if(i%3==0){
+			document.write(i+" ");
+			}
+		}
+		
+		document.write("<hr>");
+		for(var i=1; i<=31; i++){
+			document.write(i+"일 ");
+			if(i%7==0){
+			document.write("<br>");
+			}
+		}
+		
+		document.write("<hr>");
+		for(var i=1; i<=31; i++){
+			if (i<=9){ 
+			document.write("0");
+			}
+			document.write(i+"일 ");
+			if(i%7==0){
+			document.write("<br>");
+			}
+		}
+		
+		document.write("<hr>");
+		for(var i=1; i<=31;i++){
+			if(i<=9){
+			document.write("<font color='#ffffff'>0</font>")
+			}
+			document.write(i+"일 ");
+			if(i%7==0){
+			document.write("<br>");
+			}
+		}
+		
+		document.write("<hr>");
+		var value=prompt("")
+		document.write(value+"단<br>");
+		for(i=1; i<=9; i++){
+			document.write(value+"x"+i+"="+value*i+"<br>");
+		}
+
+		document.write("<hr>");
+		for(i=2;i<=9;i++){
+			for(j=1;j<=9;j++){
+			document.write(i+"x"+j+"="+i*j+"<br>");
+			if(j%9==0){
+			document.write(i+"단<br>"+"<br>");
+			}
+			}
+		}
+	</script>
+
+ 
+ <body>
+  
+ </body>
+</html>

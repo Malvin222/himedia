@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+ 	function fn_link(n){ //매개변수 n="naver"
+		var mylink = document.getElementById('mylink'); //a 태그의 id값
+		if(n=="naver"){
+			mylink.innerText="네이버";
+			mylink.href="http://naver.com";
+			mylink.target="_blank";
+		}
+		else if (n=="daum"){
+			mylink.innerText="다음";
+			mylink.href="http://daum.net"
+			mylink.target="_blank";
+		}
+	}
+ </script>
+ <body>
+  <p>
+  다음 도메인으로 이동 : <a href="http://google.com" id="mylink">구글</a>
+  </p>
+  <input type="button" value="네이버" onclick="fn_link('naver')"> <!--값-->
+  <input type="button" value="다음" onclick="fn_link('daum')">
+ </body>
+</html>

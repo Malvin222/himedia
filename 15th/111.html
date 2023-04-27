@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+<script>
+var date="2023-04-21";
+document.write(date+"<br>");
+//*****
+var year= date.substring(0,4);
+var month=date.substring(5,7);
+var day=date.substring(8,10);
+document.write(year+"년"+month+"월"+day+"일 <br>");
+document.write(month+"<br>");
+document.write(day+"<br>");
+
+//*****
+var array=date.split("-");  //구분자를 기준으로 배열처리
+document.write(array[0]+"년"+array[1]+"월"+array[2]+"일<br>");
+
+document.write("<hr>");
+var addr1="서울시 강남구 서초동 35";
+var addr2 =addr1.split(" ");
+document.write("시 : "+addr2[0]+"<br>");
+document.write("구 : "+addr2[1]+"<br>");
+document.write("동 : "+addr2[2]+"<br>");
+
+document.write("4번리 값 : "+addr1.charAt(4)+"<br>")
+
+document.write("<hr>");
+
+//*****
+var s1="JavaScript";
+
+document.write(s1.indexOf("S")+"<br>");//4
+document.write(s1.indexOf("J")+"<br>");//0
+document.write(s1.indexOf("z")+"<br>");//-1
+document.write(s1.indexOf("x")+"<br>");//-1
+document.write(s1.lastIndexOf("a")+"<br>");//마지막 서치 3
+
+document.write("<hr>");
+var email="aa@naver.com";
+if(email.indexOf("@")==-1){
+	document.write("잘못된 주소");
+} else{
+	document.write("ok");
+}
+document.write("<hr>");
+document.write(Math.max(77,55)+"<br>");
+document.write(Math.min(77,55)+"<br>");
+document.write(Math.abs(-100)+"<br>");
+document.write(Math.ceil(3.1)+"<br>");
+document.write(Math.round(3.5)+"<br>");
+
+
+</script>
+ 
+
+ <body>
+  
+ </body>
+</html>

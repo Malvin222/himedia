@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+	<script>
+		function fn_copy(){
+			var txt1 =document.frm.screen1.value;
+			//alert(txt1);
+			document.frm.screen2.value=txt1;
+		}
+
+	</script>
+ 
+ <body>
+  <input type="text" name="screen1"> <br>
+  <input type="text" name="screen2" style="border:0px;"> <br>
+  <input type="button" value="복사" onclick="fn_copy()">
+ </body>
+</html>

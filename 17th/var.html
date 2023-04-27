@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+	<script>
+		var a=0;
+		var b=0;
+		function test1(){
+			var eng = 90;
+			document.write( eng +"<br>");//90;
+			document.write( a +"<br>"); //0;
+		//	document.write( kor + "<br>");//"";
+			document.write(test2());
+		}
+		function test2(){
+			var kor = 100;
+			return kor;
+		}
+	</script>
+ <body>
+  <button type="button" onclick="test1()">클릭</button>
+ </body>
+</html>

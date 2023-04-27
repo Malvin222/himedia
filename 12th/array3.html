@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+	<script>
+		var eng = [68,98,78,88,100];
+		var kor = new Array(); // 배열변수 선언
+		kor[0] = 88; // index 번호
+		kor[1] = 98; 
+		kor[2] = 72;
+		kor[3] = 60;
+		kor[4] = 76;
+		document.write(kor[3]);
+
+		//수정 (데이터값 변경)
+		document.write(eng[2]+ "<br>");
+		document.write("<hr>");
+		// 배열의 값 자동세팅
+		
+		var hap=0;
+		var avg=0;
+		var number1 = new Array();
+		var len = 10;
+		var zero = 0;
+		for (var i=0; i<len; i++){
+			number1[i] = i*10;
+			if( number1[i] !=0){
+			hap += number1[i];
+		}	else{
+			zero++;	
+		}
+}
+		avg=Math.floor(hap/(len-zero));
+		document.write(number1 +"<br>");
+		document.write("합계 : "+hap+ "<br>");
+		document.write("평균 : "+avg+ "<br>");
+
+		document.write("<hr>");
+		for (var i=0; i<=5;i++){}
+		//
+		document.write("<hr>");
+		
+
+	</script>
+
+ <body>
+  
+ </body>
+</html>

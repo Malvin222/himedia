@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+$(function(){
+	$("#btn1").click(function(){
+		var cont = $("#content").val();
+		//document.getElementById("box1").innetHTML=cont;
+		//document.getElementById("box1").innetHTML=cont;
+		//$("box1").text(cont);
+		$("#box1").html(cont);
+	});
+});
+</script>
+ <body>
+  <input type="text" id="content">
+  <input type="button" id="btn1"value="완료">
+  <p>
+  	<div id="box1"
+	style="width:200px;height:100px;background:yellow;">
+	</div>
+  </p>
+ </body>
+ 
+</html>

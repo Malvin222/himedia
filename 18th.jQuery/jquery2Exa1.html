@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $(function(){
+	$("#g_number").mouseover(function(){
+		alert("상품번호는 변경할 수 없습니다.");
+	});
+	$("#color").change(function(){
+		alert("색상을 바꿉니다.");
+	});
+	$("#button1").click(function(){       //클릭했을때 기능적용
+		alert("전송합니다.");
+	});
+  });
+  </script>
+ <body>
+  상품번호 : <input type="text" id="g_number" value="1234" readonly> <br>
+  상품색상선택:
+  <select id="color">
+	<option value="pink">pink</option>
+	<option value="blue">blue</option>
+	<option value="yellow">yellow</option>
+  </select>
+  <button type="button" id="button1">전송</button>
+ </body>
+</html>
