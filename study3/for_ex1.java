@@ -43,6 +43,7 @@ public class for_ex1 {
 		Scanner scn = new Scanner(System.in);
 		System.out.println("단수를 입력해주세요");
 		int g1 = scn.nextInt();
+		System.out.println(g1+"단");
 		for (int g2=1;g2<=9;g2++) {
 			int result = g1 *g2;
 			System.out.println(g1+"*"+g2+" = "+result);
