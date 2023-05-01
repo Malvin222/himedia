@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+	function fn_popup(){
+	 window.open("message.html","a1","width=800,height=400,left:200,top:300");
+	}
+
+ </script>
+ <style>
+	.cell{
+		width:1500px;
+		height:150px;
+	}
+	table {
+		border-collapse:collapse;
+	}
+	
+ </style>
+ <body>
+ <form name="frm" method="post" action="sava.jsp">
+	<div class="cell">
+  <table border="0" width="650">
+  <tr>
+	<td colspan="3">마이페이지</td>
+	<td>
+	<input type="button" value="쪽지함" onclick="fn_popup()">
+	<a href="회원정보수정.html"><input type="button" value="회원정보수정" onclick=""></a>
+	<a href="회원탈퇴.html"><input type="button" value="회원탈퇴" onclick=""></a><br>
+	 </td>
+  </tr>
+  <tr bgcolor="#ebfee4"  style="border-top:1px solid black;">
+	<td>보유포인트</td>
+	<td>1,100점</td>
+	<td>보유쿠폰</td>
+	<td>1</td>
+  </tr>
+  <tr bgcolor="#ebfee4" style="border-top:1px solid black;">
+	<td>연락처</td>
+	<td>미등록</td>
+	<td>Email</td>
+	<td>chohs815@naver.com</td>
+  </tr>
+  <tr bgcolor="#ebfee4" style="border-top:1px solid black;">
+	<td>최종접속일시</td>
+	<td>2021-09-27 00:05:52</td>
+	<td>회원가입 일시</td>
+	<td>2021-09-26 21:33:16</td>
+  </tr>
+  <tr bgcolor="#ebfee4"  style="border-top:1px solid black;border-bottom:1px solid black;">
+	<td>주소</td>
+	<td>0</td>
+	<td></td>
+	<td></td>
+  </tr>
+  </table>
+  </div>
+  <div class="cell">
+  <table border="0" width="650">
+  <tr>
+	<td colspan="7">최근 예약내역</td>
+  </tr>
+  <tr align="center" bgcolor="#e3e3e3" style="border-top:1px solid black;border-bottom:1px solid black;">
+	<td>예약번호</td>
+	<td>예약일시</td>
+	<td>상품수</td>
+	<td>예약금액</td>
+	<td>입금액</td>
+	<td>미입금액</td>
+	<td>상태</td>
+  </tr>
+  
+  <tr align="center">
+	<td colspan="7" ><div style="position:relative; top:40px;"
+	style="border-top:1px solid black;border-bottom:1px solid black;">예약 내역이 없습니다</div></td>
+	
+  </tr>
+  </table>
+  </div>
+  <div class="cell">
+  <table border="0" width="650" >
+  <tr>
+	<td colspan="3">최근 위시리스트</td>
+
+
+  </tr>
+  <tr align="center" bgcolor="#e3e3e3"
+  >
+	<td>이미지</td>
+	<td>상품명</td>
+	<td>보관일시</td>
+
+  </tr>
+  <tr align="center">
+	<td colspan ="3"> <div style="position:relative; top:40px;">보관 내역이 없습니다</div></td>
+  </tr>
+  </table>
+  </div>
+  </form>
+ </body>
+</html>
