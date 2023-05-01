@@ -7,7 +7,7 @@ public class Test9_L {
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
 		
-		while(true) {
+		cc:while(true) {
 		
 			System.out.println("= 드시려는 커피번호를 입력해주세요.=");
 			System.out.println("1.아메리카노");
@@ -27,11 +27,11 @@ public class Test9_L {
 				if(n2 == 1 ) {
 					sweet = "당도 1";
 					System.out.println(sweet+" "+coffee+"가 나왔습니다");
-					break;
+					break cc;
 				}else if(n2 == 2 ) {
 					sweet = "당도 0";
 					System.out.println(sweet+" "+coffee+"가 나왔습니다");
-					break;
+					break cc;
 				}else {System.out.println("없는 번호입니다.");}
 				
 			} else if (n1 == 2 ){
@@ -46,15 +46,15 @@ public class Test9_L {
 				if(n3 == 1 ) {
 					sweet2 ="연한맛";
 					System.out.println(sweet2+"의 "+coffee+"가 나왔습니다.");
-					break;
+					break cc;
 				}else if(n3 == 2 ) {
 					sweet2 = "단맛";
 					System.out.println(sweet2+"의 "+coffee+"가 나왔습니다.");
-					break;
+					break cc;
 				}else if(n3 == 3 ) {
 					sweet2 = "아주단맛";
 					System.out.println(sweet2+"의 "+coffee+"가 나왔습니다.");
-					break;
+					break cc;
 				} else {System.out.println("없는 번호 입니다.");}
 	
 				
