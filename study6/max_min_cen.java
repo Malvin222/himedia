@@ -34,6 +34,14 @@ public class max_min_cen {
 	//중앙값 메소드 
 	public static int arrayCenter(int[] a) {
 		Arrays.sort(a);
-		return a[a.length/2];
+		int len = a.length;
+		int center = len/2;
+		int result = 0;
+		if(len%2 == 0 ) {
+			result = (a[center-1]+a[center])/2;
+		}else {
+			result = (a[center]);
+		}
+		return result;
 	} 
 }
