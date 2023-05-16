@@ -5,7 +5,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
+//다들 혹시 하시다가 이해안되거나 모르시는거 있으면 편하게 물어봐요!
+//01020158027 23시 이전에만!
 public class BoardListMap_Q3 {
 	public static void main(String[] args) {
 		List<Map>list = new ArrayList<Map>();
