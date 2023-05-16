@@ -1,0 +1,156 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>레이아웃 예제3</title>
+</head>
+
+<style>
+.wrap {
+	width:1200px;
+	height:1000px;
+}
+
+body {
+	font-size:12px;
+	font-family:맑은고딕,돋음,굴림; /*서체*/
+	line-height:1.6;   /*(위아래)줄간격-기본 1.6*/
+	text-align:center; /*좌우정렬(텍스트와 이미지만 적용됨)*/
+}
+header {
+	width:1200px;
+	height:100px;
+	border:1px solid #cccccc;
+	background-color:yellow;
+}
+nav {
+	width:1200px;
+	height:100px;
+	border:1px solid #cccccc;
+	background-color:pink;
+}
+section {
+	float:left;
+	width:1000px;
+	height:400px;
+	border:1px solid #cccccc;
+	background-color:#009900;
+}
+aside {
+	position:relative;  /*relative:상대적배치*/
+	left:1000px;        /*좌측으로 부터의 여백거리*/
+	width:200px;
+	height:600px;
+	border:1px solid #cccccc;
+	background-color:#ff0000;
+}
+article {
+	/*position:relative;
+	top:-203px;*/
+	margin-top:-205px;
+	width:1000px;
+	height:200px;
+	border:1px solid #cccccc;
+	background-color:#999999;
+}
+footer {
+	width:1200px;
+	height:100px;
+	border:1px solid #cccccc;
+	background-color:#cc99ff;
+}
+
+</style>
+
+<body>
+ 
+<div class="wrap">
+
+<header> - header - </header>
+
+<nav> </nav>
+
+<section> </section>
+
+<aside> </aside>
+
+<article> </article>
+
+<footer> </footer>
+
+</div>
+
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  <style>
+  body{
+  	font-size:12px;
+	text-align:center;
+  }
+  .wrap{  
+	width:1200px;
+	height:1000px;
+	margin:0px auto;
+  }
+  header{
+	width:1200px;
+	height:100px;
+	border:1px solid #cccccc;
+	background-color:yellow;
+  }
+  nav{
+	width:1200px;
+	height:150px;
+	border:1px solid #cccccc;
+	background-color:pink;
+  }
+  section{
+	float:left;
+	width:1000px;
+	height:400px;
+	border:1px solid #cccccc;
+	background-color:green;
+  }
+  article{
+	position:relative; 
+	/*margin-top:205px;*/
+	float:left;
+	width:1000px;
+	height:100px;
+  	border:1px solid #cccccc;
+	background-color:skyblue;
+  }
+  aside{
+	position:relative;
+	left:1000px;
+	width:200px;
+	height:500px;
+	border:1px solid #cccccc;
+	background-color:violet;
+  }
+  footer{
+	width:1200px;
+	height:150px;
+	border:1px solid #cccccc;
+	background-color:lightgreen;
+  }
+  </style>
+ </body>
+	<div class="wrap">
+		<header>header</header>
+		<nav>nav</nav>
+		<section>section</section>
+		<article>article</article>
+		<aside><div style="position:relative;top:-500px;">aside</div></aside>
+		<footer>foot</footer>
+	</div>
+</html>
+-->

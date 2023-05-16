@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <style>
+	body{
+	font-size:12px;
+	vertical-align:center;
+	}
+ 	.wrap{
+	width:1000px;
+	height:1000px;
+	margin:0px auto;
+	}
+	header{
+	width:1000px;
+	height:100px;
+	background-color:#cccccc;
+	}
+	nav{
+	position:relative;
+	top:-12px;
+	width:1000px;
+	height:50px;
+	background-color:#ffffcc;
+	}
+	aside{
+	position:relative;
+	top:-12px;
+	float:left;
+	width:100px;
+	height:600px;
+	background-color:#999900;
+	}
+	section{
+	position:relative;
+	top:-12px;
+	left:100px;
+	width:900px;
+	height:600px;
+	background-color:#cccccc;
+	}
+	footer{
+	position:relative;
+	top:-12px;
+	width:1000px;
+	height:50px;
+	background-color:#0099ff;
+	}
+	a{
+	text-decoration:none;
+	color:#000000;
+	}
+	ul li{
+	position:relative;
+	top:10px;
+	font-size:12px;
+	color:#555555;
+	background-color:#e4effc;
+	float:left;
+	line-height:30px;
+	vertical-align:middle;
+	text-align:center;
+	width:150px;
+	list-style:none;
+	border:1px solid #cccccc;
+	}
+	table{
+	position:relative;
+	top:50px;
+	left:50px;
+	width:500px;
+	border:1px solid #444444;
+	border-collapse:collapse;
+	}
+	td,th{
+	border:1px solid #444444;
+	padding:10px;
+ </style>
+ <body>
+ 	<div class="wrap">
+	<header>header</header>
+	<nav>
+	<ul>
+  	<li class="menuLink"><a href="toplayout.html">홈</a></li>
+	<li class="menuLink"><a href="memberAgree.html">회원가입</a></li>
+	<li class="menuLink"><a href="boardList.html">게시판</a></li>
+	<li class="menuLink"><a href="loginWrite.html">로그인</a></li>
+	<li class="menuLink"><a href="#">일정관리</a></li>
+	<li class="menuLink"><a href="#">답변게시판</a></li>
+	</ul>
+	</nav>
+	<aside>aside</aside>
+	<section>
+		<div>
+ <form name="form" method="post" action="save.jsp">
+ <table>
+	
+	<tr>
+		<th width="30%">제목</th>
+		<td width="*">
+			<input type="text" name="title">
+		</td>
+	</tr>
+	<tr >
+		<th>패스워드</th>
+		<td><input type="password" name="pass"></td>
+	</tr>
+	<tr>
+		<th>글쓴이</th>
+		<td><input type="text" name="name"></td>
+	</tr>
+	<tr>
+		<th>내용</th>
+		<td><textarea name="content" cols="50" rows="5"></textarea></td>
+	</tr>
+	<tr>
+		<th colspan="2">
+			<input type="submit" value="저장">
+			<input type="reset" value="취소">
+		</th>
+	</tr>
+ </table>
+ </form>
+
+	</div>
+	</section>
+	<footer>footer</footer>
+	</div>
+ </body>
+</html>

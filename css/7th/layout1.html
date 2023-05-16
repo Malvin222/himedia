@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>layout1</title>
+ </head>
+ <style>
+	body{
+	text-align:center;
+	}
+	header{
+	background:#ffcc00;
+	height:100px;
+	line-height:100px;
+	}
+	nav{
+	background:#ff99ff;
+	padding-top:20px;
+	padding-bottom:20px;
+	}
+	section{
+	background:#00cc00;
+	height:300px;
+	line-height:300px;
+	}
+	footer{
+	background:#0099ff;
+	height:55px;
+	line-height:55px;
+	}
+	a{
+	text-decoration:none;
+	}
+</style>
+ <body>
+	<header>
+		Header 영역
+	</header>
+	<nav>
+  <!--탑 메뉴 S-->
+	<table border="0" width="700" align="center">
+		<tr>
+			<th height="30" ><a href="C:/html_test/6th/loginWrite.html">로그인</a></td>
+			<th><a href="C:/html_test/6th/memberAgree.html">회원가입</a></td>
+			<th><a href="C:/html_test/6th/boardList.html">게시판</a></td>
+		</tr>
+	</table>
+	<!--탑 메뉴 E-->
+	</nav>
+	<section>
+  <!--memberAgree.html-->
+	<table border="0" width="800" align="center">
+		<tr>
+			<th><iframe src="C:/html_test/6th/message_agree.txt" width="800" height="300" frameborder="0"></iframe></th>
+		</tr>
+		<tr>
+			<th>
+			<input type="checkbox" name="chk" value="">위 약관에 동의합니다.(필수)
+			</th>
+		</tr>
+		<tr>
+			<th><input type="button" value="동의합니다." onclick="location='C:/html_test/6th/memberWrite.html'">
+			</th>
+		</tr>
+	</table>
+	</section>
+	<footer>
+		Footer 영역
+	</footer>
+ </body>
+</html>
