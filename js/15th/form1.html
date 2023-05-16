@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+	<script>
+ function fn_action(){
+		var userid=document.frm.userid.value;
+		var pass  = document.frm.pass.value;
+		var name  = document.frm.name.value;
+		var phone = document.frm.phone.value;
+		
+		if(userid==""){
+			alert("아이디를 입력해주세요");
+			return;
+		}
+		//length는 문자열뒤에, 완성된 값에.
+		if(userid.length<4||userid.length>12){
+		   alert("아이디는 4~12자 사이로 입력해주세요");
+		   return;
+		   }
+	
+		if(pass==""){
+			alert("암호를 입력해주세요.");
+			return;
+		}
+		if(pass.length<8||pass.length>20){
+			alert("암호는 8~20자 사이로 입력해주세요.");
+			return;
+		}
+		if(name==""){
+			alert("이름을 입력해주세요");
+			return;
+		}	else{
+			//name="abc1"; -->a[0]:a[0]="a",a[1]="b"
+			//isNaN("a");	true
+			//isNaN("12"); false
+			//isNan("ab12"); true;
+			for(var i=0;i<name.length;i++){
+				if(isNaN(name[i])==false){
+				alert("이름에 숫자가 있습니다");
+				return;
+				}
+			}
+		}
+		if(document.frm.gender[0].checked==false&&
+		   document.frm.gender[1].checked==false){
+		   alert("성별을 선택해주세요");
+		   return;
+		   }
+		if(phone==""){
+			alert("핸드폰 번호를 입력해주세요");
+			return;
+		}else{
+			for(var i=0;i<phone.length;i++){
+				if(isNaN(phone[i])==true){
+				alert("숫자만 입력해주세요");
+				return;
+				}
+			}
+		}
+		var len = document.frm.subject.length;
+		var cnt = 0;
+		for (var i=0;i<len;i++){ //0~4
+			if(document.frm.subject[i].checked==true){
+			cnt++;
+			}
+		}
+		if(cnt<3){
+			alert("과목을 3개이상 선택해주세요");
+			return;
+		}
+
+
+	document.frm.submit();
+	}
+	</script>
+ 
+ <body>
+  
+<form name="frm" method="post" action="save.jsp">
+ 	<caption>학생회원등록</caption>
+  <table>
+  	<tr>
+		<td>1.아이디</td>
+		<td><input type="text" name="userid" placeholder="4자리~12자리"></td>	
+	</tr>
+  	<tr>
+		<td>2.암호</td>
+		<td><input type="password" name="pass" placeholder="8자리~20자리"></td>	
+	</tr>
+  	<tr>
+		<td>3.이름</td>
+		<td><input type="text" name="name" placeholder="숫자제외" ></td>	
+	</tr>
+  	<tr>
+		<td>4.성별</td>
+		<td><input type="radio" name="gender">남성
+		<input type="radio" name="gender">여성
+		</td>	
+	</tr>
+  	<tr>
+		<td>5.핸드폰</td>
+		<td><input type="text" name="phone" placeholder="숫자만입력"></td>	
+	</tr>
+  	<tr>
+		<td>6.이메일</td>
+		<td><input type="email" name="useremail" placeholder="이메일을 입력해주세요"></td>	
+	</tr>
+  	<tr>
+		<td>7.주소</td>
+		<td><input type="text" name="adress"></td>	
+	</tr>
+  	<tr>
+		<td>8.수강과목</td>
+		<td><input type="checkbox" name="subject" value="html">html
+		<input type="checkbox" name="subject" value="javascript">javascript
+		<input type="checkbox" name="subject" value="java">java<br>
+		<input type="checkbox" name="subject" value="oracle">oracle
+		<input type="checkbox" name="subject" value="spring">spring
+		</td>	
+	</tr>
+  </table>
+  <input type="button" name="send" value="제출" onclick="fn_action()">
+  </form>
+
+ </body>
+</html>

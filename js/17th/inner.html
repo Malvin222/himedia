@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+   <script>
+	function fn_test1(){
+		//getElementById :특정 오브젝트를 인지하는 함수 ; 반드시 ID값
+		document.getElementById("test").innerHTML="<h1>수박</h1>";
+		//querySelector :특정 오브젝트를 인지하는 함수 ; (#)ID 또는 (.)class 값
+		document.querySelector("#test").innerHTML="<h1>수박</h1>";
+	}
+	function fn_test2(){
+		document.querySelector("#test").innerText="<h1>수박</h1>";
+	}
+
+  </script>
+ <body>
+	<p>
+		<button type="button" onclick="fn_test1()">크게1</button>
+		<button type="button" onclick="fn_test2()">크게2</button>
+	</p>
+	<div id="test">수박</div>
+ </body>
+</html>

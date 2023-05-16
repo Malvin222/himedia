@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+	<table>
+		<script>
+			var color=["00","33","66","99","cc","ff"];
+			for(var i=0;i<5;i++){
+				for(var j=0;j<=5;j++){
+					for(var k=0;k<=5;k++){
+						c=color[i]+color[j]+color[k];
+						document.write("<tr><td bgcolor='#"+c+"'onMouseOver=\"document.bgColor=\'#"+c+"'\">"+c+"</td></tr>");
+					}
+				}
+			}
+		</script>
+	</table>
+ 
+ <body>
+
+ </body>
+</html>

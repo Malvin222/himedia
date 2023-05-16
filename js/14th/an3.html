@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>약관 동의체크</title>
+ </head>
+ <script>
+ // 모두 true에서 하나라도 체크가 안되면 false가 되어버림.
+ //--> 경고창이 출력
+
+ 	function fn_action(){
+		var len=document.frm.chk.length;
+		var chk=true;
+		for(var i=0;i<len;i++ ){
+			if(document.frm.chk[i].checked==false){
+				chk = false;
+			}
+		}
+			if(chk==false){
+			alert("약관에 모두 동의해주세요");
+			return;
+			}
+
+			document.frm.submit();
+	}
+	function fn_allchk(){
+		var len=document.frm.chk.length;
+		for(i=0;i<len;i++){
+		if(document.frm.allchk.checked==true){
+			document.frm.chk[i].checked= true;
+		}else{
+			document.frm.chk[i].checked=false;
+			}
+		}
+	}
+ </script>
+ <body>
+  <form name="frm" method="post" action="next.jsp">
+ <div style="background:yellow;width:300px;height:100px;"></div>
+	<input type="checkbox" name="chk">
+	위(A) 약관에 동의합니다.<br>
+<div style="background:skyblue;width:300px;height:100px;"></div>
+	<input type="checkbox" name="chk">
+	위(B) 약관에 동의합니다.
+<br><br>
+	<input type="checkbox" name="allchk"onclick="fn_allchk()">전체동의<br>
+	<input type="button" value="회원가입" onclick="fn_action()"> 
+	</form>
+ </body>
+</html>

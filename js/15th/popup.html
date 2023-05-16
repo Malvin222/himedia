@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+ 
+function fn_popup(){
+
+ var url = "http://daum.net";
+ window.open(url,"a1","width=400,height=300,left:200,top:300,resizable=no"); //(웹주소,별침,옵션)
+}
+var str="10*20+30"
+document.write("eval:"+eval(str)+"<br>");
+
+var a="100";
+var b="200";
+var hap=Number(a)+Number(b);
+document.write(a+"+"+b+"="+hap+"<br>");
+var data="100";
+if(isNaN(data)==true){
+	alert("변수의 값은 문자입니다.");
+}else{
+	alert("변수의 값은 숫자입니다.");
+}
+ </script>
+ <body>
+	<a href="studentjoinform.html" target="a1">회원가입</a>
+	<br>
+	<input type="button" value="팝업" onclick="fn_popup()">
+	
+ </body>
+</html>

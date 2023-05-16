@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+	<script>
+
+	//모두 거짓에서 체크를 하면 true로 바뀜 정상출력.
+		function fn_action(){
+			var chk=false;
+			for (var i=0;i<=3; i++){
+				if(document.frm.ans[i].checked == true){
+					chk=true;	
+				}
+			}
+			if(chk == false) {
+				alert("하나를 선택해주세요");
+				return;
+				}
+		document.frm.submit();
+		}
+
+
+
+
+
+	/*var ans=document.frm.ans[n].chec
+			if(document.frm.ans[n].checked == false &&
+			   document.frm.ans[1].checked == false &&
+			   document.frm.ans[2].checked == false &&
+			   document.frm.ans[3].checked == false 
+			){
+				alert("하나를 선택해주세요");
+				return;
+			}*/
+	</script>
+ <body>
+  <form name="frm" method="post" action="save.jsp">
+  【다음 중 가장 자주 마시는 소주는?】<br>
+ <input type="radio" name="ans" value="1">참이슬<br>
+ <input type="radio" name="ans" value="2">좋은데이<br>
+ <input type="radio" name="ans" value="3">처음처럼<br>
+ <input type="radio" name="ans" value="4">시원소주<br>
+ <input type="button" value="투표" onclick="fn_action()">
+ </body>
+</html>

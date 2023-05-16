@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+	<script>
+		var score=90;
+
+		if (score <60) {
+			document.write("불합격.");
+		}
+		else{
+			document.write("합격.");
+		}
+		document.write("<br>")
+//----------------------------------------------
+		if ( score>=60 ) {
+			document.write("합격.");
+		}
+		else{
+			document.write("불합격.");
+		}
+			document.write("<br>");
+			//////
+		var gender =prompt("성별을 입력해주세요.");
+		if (gender==1){
+			document.write("남성");
+		}else if (gender==2)
+		{
+			document.write("여성");
+		}else {
+			document.write("오류");
+		}
+
+		//
+		if( gender>=3){
+			document.write("오류");
+		}
+		else if (gender==1) {
+			document.write("남성");
+		}
+		else if (gender==2){
+			document.write("여성");
+		}
+		
+		document.write("<br>-------------<br>");
+
+		var score=prompt("점수를 입력해주세요");
+
+		if (score>100){
+		document.write("점수오류");
+		}
+		else if (score<0){
+		document.write("점수오류");
+		}
+		else {
+		document.write("정상");
+		}
+	</script>
+ <body>
+  
+ </body>
+</html>

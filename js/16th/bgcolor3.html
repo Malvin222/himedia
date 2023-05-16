@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 	<script>
+	
+		function fn_color(color){
+			document.bgColor= color;
+		}
+	</script>
+ <body>
+	<table>
+		<script>
+			var color = ["00","33","66","99","cc","ff"];
+			for (var i=0;i<=5;i++){					//6번 반복
+				for(var j=0;j<6;j++){
+					for(var k=0;k<6;k++){
+			c=color[i]+color[j]+color[k];
+			document.write("<tr><td bgcolor='#"+c+"' onmouseover=\"fn_color('#"+c+"')\">"+c+"</td></tr>");
+					}
+				}
+			}
+		</script>
+	</table>
+ </body>
+</html>

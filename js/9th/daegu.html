@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <style>
+	a{
+	text-decoration:none;
+	}
+	.wrap{
+	width:720px;
+	height:800px;
+	}
+	.title{
+	font-size:40px;
+	color:#006a6a;
+	font-weight:bold;
+	}
+	.titletext{
+	padding:5px;
+	}
+	.selectwrap{
+	width:800px;
+	text-align:right;
+	padding:10px;
+	}
+	.select{
+	height:30px;
+	}
+	.text{
+	height:24px;
+	}
+	.button{
+	position:relative;
+	top:1px;
+	border:0px;
+	height:30px;
+	background:#565656;
+	color:#e6e6e6;
+	}
+	table{
+	position:relative;
+	top:10px;
+	padding:5px;
+	width:800px;
+	border-top:1px solid #444444;
+	border-bottom:1px solid #444444;
+	border-collapse: collapse;
+	}
+	th{
+	text-align:center;
+	border-top:1px solid #008800;
+	border-bottom:1px solid #00a600;
+	background:#f1f1f1;
+	padding:5px;
+	}
+	td{
+	text-align:center;
+	border-top:1px solid #444444;
+	border-bottom:1px solid #444444;
+	padding:5px;
+	}
+	.numwrap{
+	text-align:center;
+	position:relative;
+	width:800px;
+	top:20px;
+	}
+	.numOn{
+	position:relative;
+	margin:0px;
+	padding:3px 7px 3px 7px;
+	border:1px solid #c7c7c7;
+	background:#54a7a7;}
+	.num{
+	padding:3px 7px 3px 7px;
+	border:1px solid #c7c7c7;
+	}
+ </style>
+ <body>
+  <!--타이틀 S-->
+  <div class="title">일반게시판</div>
+  <hr>
+  <div class="tiltetext">사랑ㆍ빛ㆍ자유의 건학정신을 바탕으로 발전과 성취를 거듭해 온 아름다운 대학</div>
+  <!--타이틀 E-->
+  <!--검색창 S-->
+  <div class="selectwrap">
+  <select class="select">
+  	<option name="all" value="전체">전체</option>
+	<option name="title" value="제목" autofocus>제목</option>
+	<option name="name" value="글쓴이">글쓴이</option>
+	<option name="content" value="내용">내용</option>
+  </select>
+  <input type="text" name="search" class="text"></input>
+  <input type="button" name="button" value="검색" class="button"></input>
+  <!--검색창 E-->
+  <!--게시판 내용 S-->
+  <table>
+  	<tr>
+		<th>번호</th><th  align="center">제목</th><th>글쓴이</th><th>작성일</th><th>조회</th><th>파일</th>
+	</tr>
+	<tr>
+		<td>323</td>
+		<td style="text-align:left;">2023년 8월말 퇴직교원 정부포상 추천대상자 공개검증</td>
+		<td>권재순</td>
+		<td>2023-04-07</td>
+		<td>35</td>
+		<td><img src="icon_board_file.png"></td>
+	</tr>
+		<tr>
+		<td>322</td>
+		<td style="text-align:left;">제1회 꿈드림 한국어 말하기 대회 초청</td>
+		<td>김민승</td>
+		<td>2023-04-07	</td>
+		<td>11</td>
+		<td><img src="icon_board_file.png"></td>
+	</tr>
+		<tr>
+		<td>321</td>
+		<td style="text-align:left;">2023 대구 청년을 위한 강연 희망강연자 사전 설문조 ...</td>
+		<td>유지은</td>
+		<td>2023-04-05</td>
+		<td>14</td>
+		<td></td>
+	</tr>
+		<tr>
+		<td>320</td>
+		<td style="text-align:left;">[시설팀]대구대 삼거리(대구대학교 방향) 열배관 공사 ...</td>
+		<td>최정환</td>
+		<td>2023-04-04</td>
+		<td>16</td>
+		<td></td>
+	</tr>
+  </table>
+  <!--게시판 내용 E-->
+  <!--페이지번호 S-->
+  <div class="numwrap">
+  	<a href="#" class="numOn">1</a>
+	<a href="#" class="num">2</a>
+	<a href="#" class="num">3</a>
+	<a href="#" class="num">4</a>
+	<a href="#" class="num">5</a>
+	<a href="#" class="num">6</a>
+	<a href="#" class="num">7</a>
+	<a href="#" class="num">8</a>
+	<a href="#" class="num">9</a>
+	<a href="#" class="num">10</a>
+	<a href="#" class="num">></a>
+	<a href="#" class="num">>></a>
+  </div>
+  <!--페이지번호 E-->
+  </div>
+ </body>
+</html>

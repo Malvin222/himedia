@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+
+	function fn_popup() {
+	var url="https://naver.com";
+	var name="popup";
+	var option="width=300,height=300,left=200,top=200";
+	
+	var width= window.screen.width/2-150;
+	var height= window.screen.height/2-150;
+	
+	//alert(width +" ",+ height);
+	
+	window.open(url,name,option);
+}
+ </script>
+ 
+ <body onload="alert('hi');">
+  <input type="button" value="popup" onclick="fn_popup()">
+  <select name="year" onchange="alert(this.value)">
+  	<option value="2010">2010</option>
+	<option value="2011" selected>2011</option>
+	<option value="2012">2012</option>
+ </select>
+
+ <table border="1" width="300">
+	<tr height="50">
+		<td onmousemove="alert('100')">마우스커서이동</td>
+	</tr>
+	<tr>
+		<td onmouseover="alert('200')">마우스 커서 얻을때.</td>
+	</tr>
+	<tr>
+		<td onmouseout="alert('300')">마우스 커서 잃을때.</td>
+	</tr>
+</table>
+
+ </body>
+</html>
