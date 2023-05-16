@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>boardform</title>
+ </head>
+ <body>
+  <form name="board" method="post" action="board">
+  	<table border="0" bgcolor="#cccccc" cellpadding="5" cellspacing="1"  width="600">
+		<tr bgcolor="#ffffff">
+			<th width="30%">제목</th><td width="*"><input type="text" name="title"></td>
+		</tr>
+		<tr bgcolor="#ffffff">
+			<th>암호</th><td><input type="password" name="PW"></td>
+		</tr>
+		<tr bgcolor="#ffffff">
+			<th>글쓴이</th><td><input type="text" name="athor"></td>
+		</tr>
+		<tr bgcolor="#ffffff">
+			<th>내용</th><td><textarea cols="35" rows="3"></textarea></td>
+		</tr>
+		<tr bgcolor="#ffffff">
+			<td align="center" colspan="2"><input type="submit" name="save" value="저장"> <input type="reset" name="cancle" value="취소"></td>
+		</tr>
+	</table>
+  </form>
+ </body>
+</html>

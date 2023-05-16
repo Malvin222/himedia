@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title> h_test.html </title>
+ </head>
+ <body>
+  
+  <h1 align="center">구리 하이미디어 아카데미</h1>
+  <h2 align="right">구리 하이미디어 아카데미</h2>
+  <h3 align="left">구리 하이미디어 아카데미</h3>
+  <h4>구리 하이미디어 아카데미</h4>
+  <h5>구리 하이미디어 아카데미</h5>
+  <h6>구리 하이미디어 아카데미</h6>
+  <h7>구리 하이미디어 아카데미</h7>
+ <hr>
+
+ <a href="linkTest.html"> 링크모음페이지로 이동</a>
+ </body>
+</html>

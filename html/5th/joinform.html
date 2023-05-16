@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>joinform</title>
+ </head>
+ <body>
+  <form name="joinform" method="post" action="joinform">
+  	<table border="0" bgcolor="#cccccc" cellspacing="1 "cellpadding="3" width="600">
+		<tr bgcolor="#ffffff">
+			<th width="30%">아이디</th>
+			<td width="70%">
+			<input type="text" name="ID" style="width:100px;"> 
+			<input type="button" value="아이디찾기">
+			</td>
+		</tr>
+		<tr bgcolor="#ffffff">
+			<th>패스워드</th><td><input type="password" name="PW" style="width:100px;"></td>
+		</tr>
+		<tr bgcolor="#ffffff">
+			<th>이름</th><td><input type="text" name="name"></td>
+		</tr>
+		<tr bgcolor="#ffffff">
+			<th>성별</th>
+			<td>
+			<input type="radio" name="gender" value="male">남, 
+			<input type="radio" name="gneder" value="female">여
+			</td>
+		</tr>
+		<tr bgcolor="#ffffff">
+			<th>생일</th>
+			<td>
+				<select name="year">
+					<option value="1999년">1999년</option>
+					<option value="2000년">2000년</option>
+					<option value="2001년">2001년</option>
+				</select>
+				<select name="month">
+					<option value="1월">1월</option>
+					<option value="2월">2월</option>
+					<option value="3월">3월</option>
+				</select>
+				<select name="day">
+					<option value="1일">1일</option>
+					<option value="2일">2일</option>
+					<option value="3일">3일</option>
+				</select>
+			</td>
+		</tr>
+		<tr bgcolor="#ffffff">
+			<th>주소</th><td><input type="text" name="adress"></td>
+		</tr>
+		<tr bgcolor="#ffffff">
+			<td colspan="2" align="center">
+			<input type="submit" name="save" value="저장"> 
+			<input type="reset" name="reset" value="재설정">
+			</td>
+		</td>
+	</table>
+  </form>
+ </body>
+</html>
