@@ -5,7 +5,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Scanner;
-
+//하다가 이해 안되거나 막히시는 부분 있으면 편하게 물어봐요!
+//01020158027 23시 이전에만!
 public class Bank_System_Ans {
 	
 	
