@@ -35,7 +35,7 @@ public class Bank_System {
 				if(rowData.equals(userid)) {
 					str=rowData.split(":");
 					
-					money =Integer.parseInt()
+					//money =Integer.parseInt()
 				}
 			}
 			
