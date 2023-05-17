@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 
+//실습예제1 내가 작성한 코드
 public class FileQ {
 	public static void main(String[] args) throws Exception {
 		String path = "C:\\20141125";
