@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+//내가 만들다 중단한 실습예제2 
 public class Bank_System {
 	public static void main(String[] args) throws Exception {
 		String userid = "";
