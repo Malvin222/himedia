@@ -41,7 +41,7 @@ public class Bank_System_Ans {
 				break;	//while반복문 종료
 			}			
 		}
-		if(myData.equals("")) {
+		if(myData.equals("")) {		//myData라는 변수는 있지만 공백이라 데이터값은 없음 ("")->값이 공백이라면(없다면);
 			myData = id+":"+money;
 		}
 		File file = new File(path);
