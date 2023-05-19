@@ -9,5 +9,8 @@ SQLServer(MsSQL)-MS사 전용
 MySQL ->개발+서버+DB관리 전문적이지 않ㅇ므(mysql 전문가 없음)
 Oracle ->개발 전문적임(oracle 전문가 있음) -DBA
 -------------------------
+-SQL developer 설치
+
+
 -회원     -독립적 테이블 저장 : 회원테이블(id,name,pass,....)
 -게시판1   -독립적 테이블 저장
