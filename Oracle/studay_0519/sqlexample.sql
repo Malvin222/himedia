@@ -1,12 +1,12 @@
 create table sports(code number, name varchar(10));
-insert into sports(code,name) values(101,'�౸');
-insert into sports(code,name) values(102,'�߱�');
-insert into sports(code,name) values(103,'�豸');
+insert into sports(code,name) values(101,'绵备');
+insert into sports(code,name) values(102,'具备');
+insert into sports(code,name) values(103,'硅备');
 select * from sports;
 select name from sports;
-update sports set name='�౸' where code ='101';
-update sports set name ='�߱�' where code ='102';
-update sports set name = '�豸' where code = '103';
+update sports set name='绵备' where code ='101';
+update sports set name ='具备' where code ='102';
+update sports set name = '硅备' where code = '103';
 select *from sports;
 
 delete from sports where code = '101';
@@ -15,7 +15,7 @@ delete from sports;
 
 rollback;
 
-//�ǽ�3
+//角嚼3
 create table flowerInfo(code varchar2(10),
 name varchar2(20),
 color varchar2(20),
@@ -38,7 +38,7 @@ select *from flowerinfo;
 delete from flowerinfo where code='103';
 select *from flowerinfo;
 
-//�ǽ�4
+//角嚼4
 create table bookinfo(
 code varchar(20),
 title varchar(50),
@@ -54,9 +54,9 @@ select count(code) from bookinfo;
 select count(title) from bookinfo;
 select count(country) from bookinfo;
 
-//Ǯ���
+//钱绢焊扁
 select *from bookinfo where title='linux';
-select *from bookinfo where country='';
+select *from bookinfo where country is null;
 select *from bookinfo where country=null;
 select  country from bookinfo;
 
