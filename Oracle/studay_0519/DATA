@@ -11,11 +11,13 @@ Oracle ->개발 전문적임(oracle 전문가 있음) -DBA
 -------------------------
 -Oracle 
 -SQL developer 설치
+-회원     -독립적 테이블 저장 : 회원테이블(id,name,pass,....)
+-게시판1   -독립적 테이블 저장
+
 sqldeveloper 접속시 오류
 -> C:\app\hi-guri\product\21c\homes\OraDB21Home1\network\admin\tnsnames.ora
 XE 포트번호 확인
 
 
+DML(Select,Insert,Update,Delete) - 데이터 관련 컨트롤 명령어
 
--회원     -독립적 테이블 저장 : 회원테이블(id,name,pass,....)
--게시판1   -독립적 테이블 저장
