@@ -3,7 +3,7 @@
 테이블 생성
 
 1.테이블 목록
-select name from table; (*: 모두)
+select name from tab; (*: 모두)
 2.테이블 생성
 create table test1 (a varchar2(5),b varchar2(5));   -> varchar 문자타입; (n) n 열 최대값(공간)
 3.테이블 데이터 입력
