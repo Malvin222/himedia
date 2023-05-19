@@ -10,5 +10,6 @@ cd c:/
 sqlplus
 사용자아이디 : c##java
 암호:1234
-
+or 
+sqlplus c##java/1234
 SQL>
