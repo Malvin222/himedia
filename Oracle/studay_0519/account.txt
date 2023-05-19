@@ -15,9 +15,3 @@ SQL>
 
 slecet (출력) from dual(가상테이블)
 
-실습 1 
-테이블 
-(1) 테이블 목록
-selet tname from tab;
-(2)테이블 생성
-create table test1 (a varchar2(5),b varchar2(5))    -> varchar 문자타입;
