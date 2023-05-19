@@ -11,6 +11,9 @@ Oracle ->개발 전문적임(oracle 전문가 있음) -DBA
 -------------------------
 -Oracle 
 -SQL developer 설치
+sqldeveloper 접속시 오류
+-> C:\app\hi-guri\product\21c\homes\OraDB21Home1\network\admin\tnsnames.ora
+XE 포트번호 확인
 
 
 
