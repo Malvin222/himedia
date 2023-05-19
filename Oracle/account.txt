@@ -12,3 +12,5 @@ sqlplus
 암호:1234 ->입력값은 보이지 않음 (비공개처리)
 
 SQL>
+
+slecet (출력) from dual(가상테이블)
