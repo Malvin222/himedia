@@ -1,0 +1,14 @@
+{관리자모드 접속} -계정생성
+cd c:/sqlplus sys/123456 as sysdba 
+(일반접속 계정 생성)
+SQL>  create user c##java identified by 1234;
+(계정의 권한 부여)
+SQL> grant connect,resource,dba to c##java;
+SQL> exit;
+[접속]
+cd c:/
+sqlplus
+사용자아이디 : c##java
+암호:1234
+
+SQL>
