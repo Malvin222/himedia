@@ -17,3 +17,5 @@ delete from test1;
 drop table test1; (rollback x)
 7. 테이블 컬럼명 변경
 alter table 테이블명 rename column 이전 컬럼명 to 새로운컬럼명;
+8. 테이블 컬럼 타입 및 길이변경
+alter talble 테이블명 modify 컬럼명 varchar2(50);
