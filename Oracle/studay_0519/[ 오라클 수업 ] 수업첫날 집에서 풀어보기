@@ -1,0 +1,23 @@
+create table board(
+taile varchar2(100),
+pass varchar2(100),
+name varchar2(50),
+content varchar2(4000),
+rdate date);
+
+alter table board rename column taile to title;
+
+
+insert into board (title,pass,name,content,rdate)
+    values('첫글','1234','홍길동','냉무1','2023-04-01');
+
+insert into board (title,pass,name,content,rdate)
+    values('봄봄','1111','나그네','스프링','2023-04-02');
+insert into board (title,pass,name,content,rdate)
+    values('놀부전을 읽고','222','제비','조선시대','2023-04-02');
+    
+select *from board;
+select title, name from board;
+select content from board where name='홍길동';
+select * from board where length(pass)='3' ;
+select content from board where rdate='2023-04-02' and name='나그네';
