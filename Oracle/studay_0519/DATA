@@ -10,9 +10,18 @@ MySQL ->개발+서버+DB관리 전문적이지 않ㅇ므(mysql 전문가 없음)
 Oracle ->개발 전문적임(oracle 전문가 있음) -DBA
 -------------------------
 -Oracle 
+에디션 종
+Express Edition : 개인 무료 , 64bit 리눅스와 windows 에서만 사용가능 (라이센스 제약x , 단일 인스턴스제한, 최대2gb메모리)
+Personal Edition :교육, Client 작업용(단일사용자 최대 1cpu)
+Standard Edition : 소규모 기업용, 최대 4프로세스지원 (최대 4프로세스 지원 :2Cpu*2core or 1Cpu *4core, 낮은비용으로 RAC 사용가능)
+Enterprise Edition: 대규모 기업용 (모든운영체제 지원, 데이터,메모리지원 무제한 ,가격정책)
+
 -SQL developer 설치
 -회원     -독립적 테이블 저장 : 회원테이블(id,name,pass,....)
 -게시판1   -독립적 테이블 저장
+
+
+
 
 sqldeveloper 접속시 오류
 -> C:\app\hi-guri\product\21c\homes\OraDB21Home1\network\admin\tnsnames.ora
