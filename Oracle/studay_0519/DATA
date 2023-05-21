@@ -11,7 +11,7 @@ Oracle ->개발 전문적임(oracle 전문가 있음) -DBA
 -------------------------
 -Oracle 
 에디션 종
-Express Edition : 개인 무료 , 64bit 리눅스와 windows 에서만 사용가능 (라이센스 제약x , 단일 인스턴스제한, 최대2gb메모리)
+Express Edition : 개인 무료 , 64bit 리눅스와 windows 에서만 사용가능 (라이센스 제약x , 단일 인스턴스제한, 최대2gb메모리) ->학원에서 설치한 Edition
 Personal Edition :교육, Client 작업용(단일사용자 최대 1cpu)
 Standard Edition : 소규모 기업용, 최대 4프로세스지원 (최대 4프로세스 지원 :2Cpu*2core or 1Cpu *4core, 낮은비용으로 RAC 사용가능)
 Enterprise Edition: 대규모 기업용 (모든운영체제 지원, 데이터,메모리지원 무제한 ,가격정책)
