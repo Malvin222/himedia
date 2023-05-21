@@ -7,7 +7,7 @@ select name from tab; (*: 모두)
 2.테이블 생성
 create table test1 (a varchar2(5),b varchar2(5));   -> varchar 문자타입; (n) n 열 최대값(공간)
 3.테이블 데이터 입력
-insert into 테이블명(컬럼명1,컬럼명2, ...) values(값1,값2,...);
+insert into 테이블명(컬럼명1,컬럼명2, ...) values('값1','값2','...');
 4.테이블 구조 변경
 alter table 테이블명 옵션(modify) 컬럼명 컬럼타입(공간);
 --구조 출력 desc 
