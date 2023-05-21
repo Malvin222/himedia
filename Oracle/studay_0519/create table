@@ -21,3 +21,5 @@ alter table 테이블명 rename column 이전 컬럼명 to 새로운컬럼명;
 alter talble 테이블명 modify 컬럼명 varchar2(50);
 9.컬럼출력
 select 컬럼명1,컬럼명2 from 테이블명
+10. 해당 데이터가 포함된 컬럼의 데이터 출력 
+select 출력데이터 컬렁 from where 컬럼 ='data';
