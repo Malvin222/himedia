@@ -10,9 +10,10 @@ create table test1 (a varchar2(5),b varchar2(5));   -> varchar 문자타입; (n)
 insert into 테이블명(컬럼명1,컬럼명2, ...) values('값1','값2','...');
 4.테이블 구조 변경
 alter table 테이블명 옵션(modify) 컬럼명 컬럼타입(공간);
---구조 출력 desc 
-test1
+--구조 출력 desc test1
 5.데이터 삭제
 delete from test1;
 6.테이블 삭제
 drop table test1; (rollback x)
+7. 테이블 컬럼명 변경
+alter table 테이블명 rename column 이전 컬럼명 to 새로운컬럼명;
