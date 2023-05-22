@@ -1,0 +1,21 @@
+[DDL]
+-테이블 객체의 생성/변경(형)을 수행하는 명령어들
+(1)create   : 테이블생성
+(2)alter    : 테이블 (컬럼)구조 변경
+(3)drop     : 테이블삭제
+(4)truncate : 테이블 초기화
+(5)comment  : 테이블 설명 
+
+[DML]
+-테이블의 데이터 입력/수정/조회/삭제를 수행하는 명령어들
+(1)select : 조회(출력)
+(2)insert : 입력
+(3)update : 수정
+(4)delete : 삭제
+
+[DCL]
+-트랜잭션 관련 명령어들
+(1) commit    : 트랜잭션 종료(적용)
+(2) rollback  : 트랜잭션 실행 취소
+(3) savepoint : 작업위치를 지정
+(4) set transaction : 트랜잭션의 시작  오라클->오토(default)
