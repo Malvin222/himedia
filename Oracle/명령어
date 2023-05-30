@@ -1,0 +1,242 @@
+1.테이블 목록
+select name from tab; (*: 모두)
+2.테이블 생성
+create table test1 (a varchar2(5),b varchar2(5));   -> varchar 문자타입; (n) n 열 최대값(공간)
+3.테이블 데이터 입력
+insert into 테이블명(컬럼명1,컬럼명2, ...) values('값1','값2','...');
+4.테이블 구조 변경
+alter table 테이블명 옵션(modify) 컬럼명 컬럼타입(공간);
+--구조 출력 desc test1
+5.데이터 삭제
+delete from test1;
+6.테이블 삭제
+drop table test1; (rollback x)
+7. 테이블 컬럼명 변경
+alter table 테이블명 rename column 이전 컬럼명 to 새로운컬럼명;
+8. 테이블 컬럼 타입 및 길이변경
+alter talble 테이블명 modify 컬럼명 varchar2(50);
+9.컬럼출력
+select 컬럼명1,컬럼명2 from 테이블명
+10. 해당 데이터가 포함된 컬럼의 데이터 출력 
+select 출력데이터 컬렁 from where 컬럼 ='data';
+
+--변경 :title의 크기를 200byte로 재설정
+alter table subject modify title varchar2(200);
+--추가 : name 문자열(50byte) 추가 
+alter table subject add name varchar2(50);
+--삭제 : name 컬럼 삭제
+alter table subject drop column name;
+--컬럼명 변경 : alter table 테이블명 rename column 전컬럼명 to 생성컬럼명 
+alter table subject rename column price to price100;
+--[truncate]-- 테이블 초기화 (데이터 삭제) commit 관련 명령어가 아니기때문에 rollback 불가
+truncate table subject; 
+
+select sysdate from dual;   --연/월/일 (시 분 초 숨겨져있음)
+select systimestamp from dual;  --연/월/일 시:분:초
+--포멧 설정 : to_char (시간,포맷(형식:----/--/-- --:--:--))
+-- to_char : 시간을 문자열로 바꾸어주는 함수
+        --yyyy:년도4자리 mm:월2자리 dd:일 2자리   hh24:24시간2자리 mi:분 ss:초 
+select to_char(sysdate,'YYYY/MM/DD HH24:mi:ss')from dual; --현재시간
+
+-- 날짜/증가 감소
+-- 일 (날짜)단위 증가와 감소는 +,-연산기호를 사용한다.
+select sysdate, sysdate+3 from dual;    --날짜기준 3일 증가
+select to_char(sysdate-3,'yyyymmdd hh24miss') from dual; --3일 감소
+select to_char(sysdate+1,'yyyymmdd hh24miss')from dual; --1일후
+select to_char(sysdate+(2/24),'yyyymmdd hh24miss') from dual; --2시간후 ->1일을 24로 나눔
+select systimestamp, sysdate-1 from dual;
+--add_month() : 월단위 증가/감소 -*날짜를 동일하게 세팅해야 정수타입의 결과를 얻음
+select add_months(sysdate,2)from dual;
+--months_between() : 월단위의 차이 반환 month_between(큰달,작은달)
+select months_between('2021-09-02','2021-08-02')from dual;
+select round(months_between('2021-09-02','2021-08-03'),2) from dual;
+--last_day: 해당 달의 마지막 날짜 반환
+
+--to_char()함수
+--(1)년월일 시분초
+select to_char (sysdate,'yyyy-mm-dd am hh:mi:ss') from dual;
+--(2)올해의 연도
+select to_char(sysdate,'yyyy')from dual;
+--(3)올해의 날짜와 요일 출력
+select to_char(sysdate,'yyyy-mm-dd day') from dual;
+select last_day(sysdate) from dual;
+select last_day ('2021-02-01') from dual;
+--to_date()함수 : 문자열 타입의 날짜값을 날짜타입으로 변환
+--(4) select to_date ( 문자열, 포맷)
+select to_date('20230522 15:22:30','yyyy-mm-dd hh24:mi:ss') from dual;
+--(5) 월 일을 당일을 적용 : 출력날짜가 5월22일이면 5월 1일
+select to_date('1998','yyyy') as mydate from dual;
+--to_char() 함수의 다른기능 
+--정수(숫자)에 3자리마다 콤마(,)찍기 9:숫자 의미 (fm: 주어진 숫자보다 작으면 안됨)
+-- as name : 컬럼명을 name 값으로 적용
+select to_char(123456,'fm999,999') as num1 from dual;
+
+savepoint sp1;
+rollback to sp1;
+
+--3. 번호,제목,이름을 아래의 형식으로 목록 출력  --|| :연결연산자 , as : 컬럼명 변경출력 
+select unq||':'||title||':'||name as title from board1 ;
+
+--4. 제목과 내용의 길이를 목록 출력;
+--oracle수업(4) length(content) :content 길이 출력
+select title||'('||length(content)||')' as title from board1;
+
+--5. 조회수를 모두 1000으로 변경
+update board1 set hit=1000;
+
+--7. 최신글 순으로 출력 rdate 보단 고유번호로 정렬하는게 좀 더 정확함
+select *from board1 order by unq desc;
+
+--8. 조회수 많은 순으로 출력
+select * from board1 order by hit desc;
+
+--like :포함 문자열 추출 %: 아무 문자와도 상관없음
+--java%: java라는 단어로 시작하는 문자열 java뒤에 아무 문자나 와도 상관없음
+-- '.' :문자 한개
+--'.body%' : body라는 단어 앞에 문자 한개가 반드시 있어야하고 뒤에 아무문자나 와도 상관없음
+--10. unq 3번의 조회수를 +100
+update board1 set hit=hit+100 where unq='3'; --(o)
+--[IN함수]--
+select ename,deptno from emp where deptno=10 or deptno=20;
+select ename,deptno from emp where deptno in(10,20);
+--[between]--
+select deptno,ename from emp where deptno>=10 and deptno<=20;
+select deptno,ename from emp where deptno between 10 and 20;
+
+--2. 직원번호,직원이름 rownum적용
+select rownum,empno, ename, job from emp;
+--6. 직원번호 직원이름 rownum 1부터가 아닌 범위출력 
+select a.*from(select rownum as rn,empno,ename,job from emp) a;-- a: 구조물 테이블 별칭 as로 rn 컬럼이름지정
+select a.*from(select rownum as rn,empno,ename,job from emp) a where rn>=6;
+-- 정렬한 데이터에 rownum적용
+select rownum,a.*from(select empno,ename,job from emp order by empno asc)a; --
+--10.급여기준으로 상위 1등~5등
+select b.*from(
+select rownum as rn,a.*from 
+(select empno,ename,job,sal from emp order by sal desc)a)b where rn>=1 and rn<=5;
+
+--6. SMITH보다 급여를 많이 받는 직원들을 출력
+select empno,ename,sal,deptno from emp where sal >=
+    (select sal from emp where ename=upper('smith')and rownum=1)order by sal desc;
+
+--7. 전체 평균 급여보다 많이 받는 직원들을 출력
+select empno,ename,sal,deptno,(select round(avg(sal))from emp) as avg from emp where sal >=
+    (select avg(sal) from emp) order by sal desc;
+    
+    --사원번호,사원이름,급여,등급
+select e.empno,
+       e.ename,
+       e.sal,
+       s.grade ||'등급' grade
+    from emp e,salgrade s 
+ where e.sal between s.losal and s.hisal;
+ 
+ --3.outer join: 부족한 데이터를 null값으로 출력해서 행의 갯수가 달라도(매칭이 되지 않아도) 출력가능
+--사원번호,사원이름,부서이름 (king deptno 데이터를 10-> 70으로 변경)
+select e.empno empno,
+       e.ename ename,
+       d.dname dname,
+       e.deptno deptno
+    from emp e,dept d 
+    where e.deptno = d.deptno (+);
+    --중복제거 distinct , 포함열 like, 연결연산자||
+    select distinct(a3) from post1 where a4 like '%양재%'; --(6)
+
+--시퀀스 sequence(자동 숫자증가,일반적으로 고유번호 생성시 사용)
+create sequence h_member1_unq_seq
+increment by 1  --증가수치
+start with 1    --시작수치
+
+--nextval 다음 값 추가
+insert into h_member2(unq,userid,pass,name,birthday,phone) 
+    values(h_member1_unq_seq.nextval,'hong','1234','홍길동','2010-04-23','');
+    
+    --3.아이디,이름,총점,평균 --(영어+국어),(영어+국어)/2   
+select m.userid,
+       m.name,
+       (s.eng+kor) as sum,
+       (s.eng+s.kor)/2 as avg
+        from h_member1 m,h_score1 s --as 생략가능
+        where m.userid = s.userid;  --userid 조인
+        
+        --4.아이디,영어점수(학점)
+select s.userid,s.eng||'('||g.grade||')' eng 
+        from h_score1 s,h_grade1 g
+    where s.eng between g.loscore and g.hiscore;    --s.eng와 grade 범위를 조인(매칭)
+    
+    --NVL()함수) nvl(필드값,세팅값) ->필드값이 null인경우 세팅값 리턴
+select ename,nvl(mgr,0) mgr from emp;
+
+select ename,sal,comm,(sal+nvl(comm,0)) from emp;
+                            --nvl2(컬럼,null이 아닌경우,null인경우)
+                            
+--뷰 테이블 생성(뷰테이블은 보통 v_를 앞에 붙임) creat view 뷰테이블 명 as (가져올)select문
+create view v_emp_copy as select *from emp;
+
+--primary key 중복 불가
+create table memberTest102(
+    unq number(9) primary key
+    ,id varchar2(30) primary key --primary key 중복 불가
+    ,pwd varchar2(100) not null 
+    ,name varchar2(30) unique--null 포함 가능
+    ,gender char(1) default 'M'check(gender in('M','F'))    --'M','F'
+    ,rdate timestamp   --년월일 시분초 ..date
+    );
+
+--constraint 별칭 primarykey 괄호 안에는 두개의 primary key 가능
+create table memberTest103(
+    unq number(9) not null
+    ,id varchar2(30) not null
+    ,pwd varchar2(100) not null
+    ,name varchar2(30) not null --null 포함 가능
+    ,gender char(1)    --'M','F'
+    ,rdate timestamp   --년월일 시분초 ..date
+    ,constraint mm_gender_ck1 check(gender in('M','F'))  --check :'M'아니면 'F'만 와야함
+    ,constraint mm_unq_pk1 primary key(id,name) --primary ket :고유값 보장,검색(index)테이블 올림
+);
+maxvalue 99999; --최종수치
+
+--자바 상속 (자식레벨)
+create table jumsu11(
+    userid varchar2(20) not null,
+    kor number,
+    eng number,
+    constraint jumsu_fk foreign key(userid) 
+        references student11(userid)
+    );
+    
+    alter table jumsu11 drop constraint jumsu_fk; --fk삭제
+delete from student11 where userid = 'a1';--삭제가능
+
+--[풀어보기3]
+--(decode) 사원급여가 2000보다 많으면 상, 그렇지 않으면 하
+--decode함수 맨 앞에 컬럼명 뿐만아니라 함수 및 계산식도 올 수 있음
+select empno
+       ,ename
+       ,sal
+       ,decode(sign(sal-2000),1,'상'
+                             ,-1,'하') sal2
+    from emp;
+
+--sign :결과값이 양수(1),음수(-1)
+select sign(1000) from dual;    --  1
+select sign(-199) from dual;    -- -1
+
+--[풀어보기5]
+--(decode) 1월~6월까지 년도와 상관없이 해당 월에 입사한 사람 수를 출력하시오.
+select count(1) from emp
+            where to_char(hiredate,'mm') ='01';
+-------------------------------------------------------
+select 
+    count(decode(to_char(hiredate,'mm'),'01',1)) "1월"
+    ,count(decode(to_char(hiredate,'mm'),'02',1)) "2월"
+    ,count(decode(to_char(hiredate,'mm'),'03',1)) "3월"
+    ,count(decode(to_char(hiredate,'mm'),'04',1)) "4월"
+    ,count(decode(to_char(hiredate,'mm'),'05',1)) "5월"
+    ,count(decode(to_char(hiredate,'mm'),'06',1)) "6월"
+    from emp;
+    
+select count(*)
+      ,count(ename)
+      ,count(empno)
+    from emp;
