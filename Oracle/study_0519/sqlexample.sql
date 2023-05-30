@@ -1,3 +1,5 @@
+--깨져서 한자로 뜸 
+
 create table sports(code number, name varchar(10));
 insert into sports(code,name) values(101,'绵备');
 insert into sports(code,name) values(102,'具备');
