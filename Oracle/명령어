@@ -146,6 +146,7 @@ select e.empno empno,
 create sequence h_member1_unq_seq
 increment by 1  --증가수치
 start with 1    --시작수치
+maxvalue 99999; --최종수치
 
 --nextval 다음 값 추가
 insert into h_member2(unq,userid,pass,name,birthday,phone) 
