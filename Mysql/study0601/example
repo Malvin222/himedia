@@ -1,0 +1,37 @@
+--[Q1]
+(1)
+select username from student where grade=1
+(2)
+SELECT username,age FROM student WHERE `age`>=15
+(3)
+select userid,gender from student where gender is null or gender=''
+--[Q2]
+(1)
+select username,age,grade from student where userid='st101' or userid='st102';
+(2)
+select *from student where age>=15 and gender='F';
+(3)
+select userid,username from student where grade='2' and gender='M';
+(4)
+select avg(age) as age from student where gender ='M' and age !='0';
+(5)
+select username,age from student order by age desc;
+--[Q3]
+(1)
+update student set age ='14' where userid='st105';
+(2)
+update student set age ='15' where userid='st107';
+(3)
+update student set grade = case when age=14 then 1 
+                                when age=15 then 2 
+                                when age=16 then 3 
+                                end 
+                                where grade is null or grade='';
+(4)
+update student set gender = 'M' where gender is null or gender='';
+--case 함수
+--오라클에서의 디코드 느낌 
+-- gender 가 M일때 남 , F일때 여 else 일때 모름 
+select userid, case when gender='M' then '남'
+                  when gender='F' then '여' 
+                  else '모름' end as '성별' from  student;
