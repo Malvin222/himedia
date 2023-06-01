@@ -1,0 +1,10 @@
+[ ORACLE ] 
+[ MYSQL  ] -apmsetup7 프로그램 설치
+ 로그인 : root / apmsetup
+ --일반 계정 생성--
+ (1)새 데이터베이스 생성: apple , utf8_general_ci
+ (2)새 사용자 등록: 우측 상단 사용권한-> 사용자명 :test1 ,권한 : 모두체크
+ 
+ ex)
+ 쇼핑몰 --shop DB  ---테이블들
+ 회사관리 -- com DB --테이블들
