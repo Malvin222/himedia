@@ -49,4 +49,36 @@ create table mbr_info(
   insert into mbr_other values ('test1','j002','h003','O');
   insert into mbr_other values ('test2','j003','h002','AB');
   insert into mbr_other values ('test3','j001','h002','B');
+  
   --데이터 출력
+  (1) 아이디 : test1, 이름 : 홍길동, 생년 : 2000년생
+    select userid '아이디',
+           name '이름',
+           substr(birthday,1,4) '생년'
+           from mbr_info;
+  (2) 아이디 : test1, 이름 : 홍길동, 성별 : 남, 나이 : 2000년생, 등록일 : 2021-01-10
+    select userid '아이디',
+           name '이름',
+           if(gender= 'M','남','여') '성별',
+           substr(now(), 1,4) - substr(birthday,1,4) '나이', 
+           rdate 
+           from mbr_info;
+  (3) 암호가 1234로 되어 있는 데이터를 출력한다
+    select *from mbr_info where pass=password('1234');
+    select *from mbr_info where pass=md5('7777')
+  (4) 2021년 2월 이후 등록자들의 이름과 전번을 출력한다
+    select name,phone,rdate from mbr_info where rdate >'2021-02-01';
+  (5) 핸드폰 번호가 010이 아닌 데이터를 출력한다
+    select * from mbr_info where phone not like '010%';
+  (6) 아이디가 test로 시작되는 데이터를 출력한다
+    select * from mbr_info where userid like 'test%';
+  (7) 아이디 이름 혈액형을 출력한다
+    select i.name,o.blood from mbr_info i ,mbr_other o where i.userid=o.userid;
+  (8) 아이디 직업 취미를 출력한다
+      select i.userid,c.code_name,o.hobby from mbr_info i ,mbr_other o, mbr_code c where i.userid=o.userid and c.code_id=o.hobby ;
+  (9) 홍길동의 취미를 출력한다
+      select i.userid,o.job,o.hobby from mbr_info i ,mbr_other o where i.userid=o.userid ;
+  (10) 홍길동의 직업을 출력한다
+      select i.userid,o.job,o.hobby from mbr_info i ,mbr_other o where i.userid=o.userid;
+  (11) 야구가 취미인 사람을 출력한다
+      select i.userid,o.job,o.hobby from mbr_info i ,mbr_other o where i.userid=o.userid;
