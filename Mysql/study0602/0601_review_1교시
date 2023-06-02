@@ -18,7 +18,7 @@ apple2 ,  *****************collation:utf_general_ci******************* 중요 �
             a7 varchar(100));
 확인 : 상단 데이터베이스 :apple
 
-임포트 (LOAD DATE) : post1 테이블 -> import -> 파일선택 :post.sql -> utf8 ->CSV using LOAD DATA -> 필드구분자 : ,
+임포트 (LOAD DATE) : post1 테이블 -> import -> 파일선택 :post.sql -> utf8 ->CSV using LOAD DATA -> 필드구분자 : , (쉼표)
       현직에서는 import를 LOAD DATE 라고 부름 (알고있어야함)     
 
 임포트 후 검색 : SELECT * FROM `post1` where a7 like '%월산%'
@@ -28,4 +28,25 @@ truncate table post1;    :데이터 초기화
 post1.csv 파일 621715,경상남도,김해시,부곡동, , ,"월산마을부영1,2단지아파트 (101~206동)"  ******************안바꾸면 데이터 안들어감
           파일 내용 변경  ->621715,경상남도,김해시,부곡동, , ,'월산마을부영1,2단지아파트 (101~206동)'   
 재임포트
-파일선택 :post.sql -> utf8 ->CSV using LOAD DATA -> 필드구분자 : ,
+파일선택 :post.sql -> utf8 ->CSV using LOAD DATA -> 필드구분자 : ,(쉼표)
+
+(1)전체 데이터 개수 출력
+     select count(*)from post1;   -> 52840
+(2)"서울" 데이터 개수 출력
+     select count(*)from post1 where a2 like '%서울%'
+(3)"문화동"이 어느구나 시에 있는지 검색
+     select a2,a3 from post1 where a4 like '%문화동%';
+(3-1) "문화동"이 어느구나 시에 있는지 검색 grouo by 사용
+     select *from post1 where a4 like'%문화동%'
+             group by a3;
+(4)전국에 "중앙하이츠" 아파트가 몇개가 있는지 출력
+     select count(*) from post1 where a7 like '%중앙하이츠%';
+(4-1) 그룹바이 형태로 출력
+     select a3,count(*) from post1 where a7 like '%중앙하이츠%' 
+            group by a3
+            order by count(*) desc;
+(5)서울시에 어떤 "구"들이 있는지 구만 출력한다.
+     select distinct(a3) from post1 where a2 like '%서울%';
+(6)다음 내용을 검색하여 하나의 컬럼형식으로 연결하여 출력한다.
+            306762 대전 광역시 대덕구 목상동 동원상록수아파트
+   select a1||a2||a3||a4||a5||a6||a7 from post1 where a7 like '%동원상록수아파트%';
