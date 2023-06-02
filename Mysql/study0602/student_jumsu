@@ -1,6 +1,11 @@
 [3강] 학생점수 관리
 
+--테이블 생성
 --auto_increment : mysql에서 oracle의 시퀀스 역할  , unsigned : 음수공간이 양수공간으로 바뀌면서 양수공간이 늘어남
+임포트 할땐 unq 값이 있어서 auto_increment가 상관이 없는데
+ 데이터 추가하면 그 후부터 auto_increment 적용 
+
+
 create table studentScore(
   unq int not null auto_increment,
   userid varchar(10) not null,
@@ -9,3 +14,11 @@ create table studentScore(
   eng tinyint unsigned default'0',
   primary key(unq)
   );
+
+-- 데이터 임포트 
+import 데이터 구분자 : ,
+ SELECT * FROM studentScore order by unq asc limit 40 --unq 순으로 출력
+ SELECT * FROM studentScore order by unq asc limit 5 --eng점수 순으로 출력
+ -- 6~10등 limt 5,5 ->  6번부터 5개 가져옴
+ limit index번호(행번호),출력개수
+  SELECT * FROM studentScore order by unq asc limit 5,5  -- 6~10등
