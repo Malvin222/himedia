@@ -61,4 +61,4 @@ select userid,eng from studentscore where loc='2' order by eng desc limit 1 ;
 --공동 1등 출력
 select userid,eng from studentscore where loc='2' and eng =(select max(eng) from studentscore where loc='2');
 (14)대구지역에서 두 과목 합계 1등의 아이디와 총점을 출력한다.
-select userid,(kor+eng) hap from studentscore where loc='2' and (kor+eng) =(select max(kor+eng) from studentscore where loc'2;) ;
+select userid,(kor+eng) hap from studentscore where loc='2' and (kor+eng) =(select max(kor+eng) from studentscore where loc='2') ;
