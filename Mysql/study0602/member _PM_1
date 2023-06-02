@@ -83,13 +83,47 @@ create table mbr_info(
   (7) 아이디 이름 혈액형을 출력한다
     select i.userid, i.name,o.blood from mbr_info i ,mbr_other o where i.userid=o.userid;
   (8) 아이디 직업 취미를 출력한다
-      select i.userid,c.code_name,o.hobby,o.job from mbr_info i ,mbr_other o, mbr_code c where i.userid=o.userid or c.code_id=o.hobby or c.code_id=o.job ;
+      select i.userid,
+             i.name,
+             (select code_name from mbr_code where code_id=o.job) as job,
+             (select code_name from mbr_code where code_id=o.hobby) as hobby
+             from mbr_info i, mbr_other o 
+             where i.userid=o.userid;
+  (8.1) 조인문 사용
+      select i.userid,
+             i.name,
+             c1.code_name as job,
+             c2.code_name as hobby
+      from mbr_info i, mbr_other o, mbr_code c1, mbr_code c2
+      where 
+        i.userid = o.userid
+        and o.job = c1.code_id
+        and o.hobby = c2.code_id;
+        
   (9) 홍길동의 취미를 출력한다
-      select i.userid,o.job,o.hobby from mbr_info i ,mbr_other o where i.userid=o.userid ;
+      select i.userid,
+             i.name,
+             c.code_name as hobby
+                from mbr_info i ,mbr_other o,mbr_code c 
+                where i.userid=o.userid 
+                  and o.hobby =c.code_id
+                  and i.name='홍길동';
   (10) 홍길동의 직업을 출력한다
-      select i.userid,o.job,o.hobby from mbr_info i ,mbr_other o where i.userid=o.userid;
+      select i.userid,
+             i.name,
+             c.code_name as job
+                from mbr_info i ,mbr_other o,mbr_code c 
+                where i.userid=o.userid 
+                  and o.job =c.code_id
+                  and i.name='홍길동';
   (11) 야구가 취미인 사람을 출력한다
-      select i.userid,o.job,o.hobby from mbr_info i ,mbr_other o where i.userid=o.userid;
+      select i.userid,
+             i.name,
+             c.code_name as hobby
+                from mbr_info i ,mbr_other o,mbr_code c 
+                where i.userid=o.userid 
+                  and o.hobby =c.code_id
+                  and c.code_name='야구';
       
       
  ** 함수
