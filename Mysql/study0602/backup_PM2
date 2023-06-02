@@ -12,11 +12,13 @@ show tables;
 select *from mbr_code;
 exit
 
+-전제 데이터 백업
 cd c:/
 mysqldump -utest1 -p1234 -apple > db.sql         -> 액세스 거부되어서 할수가 없음..   -> cmd를 관리자 모드로 실행
-apple 테이블 삭제 
 
-복구
+
+apple 테이블 삭제 
+--전제 데이터 복구
 mysqldump -utest1 -p1234 apple < db.sql
 
 
