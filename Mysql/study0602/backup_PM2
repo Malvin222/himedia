@@ -8,6 +8,7 @@
   
 --cmd 환경
 mysql -utest1 -p1234 (본인이 설정한 비밀번호) apple
+show tables;
 select *from mbr_code;
 exit
 
