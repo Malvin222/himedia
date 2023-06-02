@@ -98,7 +98,7 @@ select userid,
              else 'F'
       end   as 'eng_grade'
        from studentscore;  
-(15-2) 뷰 테이블 생성
+(15-2) 뷰 테이블 생성 --업데이트 
 create view v_studentscore1 as 
 select userid,
        kor,
