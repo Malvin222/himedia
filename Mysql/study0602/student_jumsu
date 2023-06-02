@@ -1,0 +1,11 @@
+[3강] 학생점수 관리
+
+--auto_increment : mysql에서 oracle의 시퀀스 역할  , unsigned : 음수공간이 양수공간으로 바뀌면서 양수공간이 늘어남
+create table studentScore(
+  unq int not null auto_increment,
+  userid varchar(10) not null,
+  loc varchar(10) not null,
+  kor tinyint unsigned default'0',
+  eng tinyint unsigned default'0',
+  primary key(unq)
+  );
