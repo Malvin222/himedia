@@ -1,5 +1,5 @@
 --새 데이터베이스 생성
-apple2 , utf_general_ci
+apple2 ,  *****************collation:utf_general_ci******************* 중요 안바꾸면 한글 데이터 깨짐
 
 --상단 -> 사용권한 
 새 사용자 추가 
