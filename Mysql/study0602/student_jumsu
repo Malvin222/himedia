@@ -22,3 +22,43 @@ import 데이터 구분자 : ,
  -- 6~10등 limt 5,5 ->  6번부터 5개 가져옴
  limit index번호(행번호),출력개수
   SELECT * FROM studentScore order by unq asc limit 5,5  -- 6~10등
+
+--실습예제
+(1)영어점수를 1등부터 줄력한다
+select eng from studentscore order by eng desc;
+(2)영어점수 중 최고점을 출력한다
+select userid,max(eng) from studentscore where eng;
+(3)아이디 101의 평균을 출력한다 (hint:행의 연산은 함수가 없으므로 일일히 더하고 평균을 낸다)
+select avg(eng+kor) as avg from studentscore where userid = 'st101';
+(4)국어점수가 60점 미만인 학생의 아이디를 출력하시오
+select userid,kor from studentscore where kor<60;
+(5)두 과목 모두 60점 이상인 학생들을 출력한다.(hint: and 조건 검색)
+select userid,kor,eng from studentscore where kor>=60 and eng>=60;
+(6)두 과목 중 한 과목 이라도 60점 미만이 있는 학생들을 출력한다.(hint : or 조건 검색)
+select userid,kor,eng from studentscore where kor<60 or eng<60;
+--LIMIT 절
+(7)영어점수 기준으로 1등부터 5등까지 학생들을 출력하시오
+select *from studentscore order by eng desc limit 0,5;
+(8)영어점수 기준 6등~10등인 학생들을 출력한다.
+select *from studentscore order by eng desc limit 5,5; 
+(9)전체 총합 1등의 아이디,이름,총합점수를 출력한다.
+select userid,eng+kor from studentscore where eng+kor order by eng+kor desc limit 1;
+
+--공동 1등 출력
+select userid,(kor+eng) hap from studentscore where (kor+eng) =(select max(kor+eng) from studentscore);
+
+(10)아이디가 101인 데이터의 영어점수에 +5를 적용한다.
+select userid,(eng)+5 from studentscore where userid like '%101%';
+
+update studentscore set eng=eng+5 where userid like '%101%';
+
+(11)대구지역 학생 목록을 출력한다.
+select userid from studentscore where loc='2';
+(12)대구지역 학생 수를 출력한다.
+select count(*) from studentscore where loc='2';
+(13)대구지역에서 영어점수가 가장 높은 학생의 아이디와 영어점수를 출력한다.
+select userid,eng from studentscore where loc='2' order by eng desc limit 1 ;
+--공동 1등 출력
+select userid,eng from studentscore where loc='2' and eng =(select max(eng) from studentscore where loc='2');
+(14)대구지역에서 두 과목 합계 1등의 아이디와 총점을 출력한다.
+select userid,(kor+eng) hap from studentscore where loc='2' and (kor+eng) =(select max(kor+eng) from studentscore where loc'2;) ;
