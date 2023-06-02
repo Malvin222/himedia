@@ -58,5 +58,5 @@ post1.csv 파일 621715,경상남도,김해시,부곡동, , ,"월산마을부영
             306762 대전 광역시 대덕구 목상동 동원상록수아파트
    select a1||' '||a2||a3||a4||a5||a6||a7 from post1 where a7 like '%동원상록수아파트%'; -> "||" 옛날버전은 적용되지 않음
    
-   concat 함수 이용
-   select concat(a1,' ',a2,' ',a3,' ',a4,' ',a5,' ',a6,'',a7) from post1 where a7 like '%동원상록수아파트%';
+   concat 함수 이용 -> 연결 연산자 대신 concat 함수를 사용
+   select concat(a1,' ',a2,' ',a3,' ',a4,' ',a5,' ',a6,'',a7) as name from post1 where a7 like '%동원상록수아파트%';
