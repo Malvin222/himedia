@@ -23,6 +23,15 @@ import : student_jumsu.csv  , 데이터 구분자 : ,
  limit index번호(행번호),출력개수
   SELECT * FROM studentScore order by unq asc limit 5,5  -- 6~10등
 
+--내용수정
+주소 정보에 해당하는 loc 컬럼 값을 변경한다.
+1:서울, 2:대구, 3:원주, 4:전주
+update studentscore set loc = case when loc='1' then '서울'
+                                   when loc='2' then '대구'
+                                   when loc='3' then '원주'
+                                   when loc='4' then '전주'
+                               end;
+
 --실습예제
 (1)영어점수를 1등부터 줄력한다
 select eng from studentscore order by eng desc;
@@ -53,12 +62,12 @@ select userid,(eng)+5 from studentscore where userid like '%101%';
 update studentscore set eng=eng+5 where userid like '%101%';
 
 (11)대구지역 학생 목록을 출력한다.
-select userid from studentscore where loc='2';
+select userid from studentscore where loc='대구';
 (12)대구지역 학생 수를 출력한다.
-select count(*) from studentscore where loc='2';
+select count(*) from studentscore where loc='대구';
 (13)대구지역에서 영어점수가 가장 높은 학생의 아이디와 영어점수를 출력한다.
-select userid,eng from studentscore where loc='2' order by eng desc limit 1 ;
+select userid,eng from studentscore where loc='대구' order by eng desc limit 1 ;
 --공동 1등 출력
-select userid,eng from studentscore where loc='2' and eng =(select max(eng) from studentscore where loc='2');
+select userid,eng from studentscore where eng =(select max(eng) from studentscore where loc='대구');
 (14)대구지역에서 두 과목 합계 1등의 아이디와 총점을 출력한다.
-select userid,(kor+eng) hap from studentscore where loc='2' and (kor+eng) =(select max(kor+eng) from studentscore where loc='2') ;
+select userid,(kor+eng) hap , loc from studentscore where (kor+eng) =(select max(kor+eng) from studentscore where loc='대구') ;
