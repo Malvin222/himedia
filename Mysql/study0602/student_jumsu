@@ -16,7 +16,7 @@ create table studentScore(
   );
 
 -- 데이터 임포트 
-import 데이터 구분자 : ,
+import : student_jumsu.csv  , 데이터 구분자 : ,
  SELECT * FROM studentScore order by unq asc limit 40 --unq 순으로 출력
  SELECT * FROM studentScore order by unq asc limit 5 --eng점수 순으로 출력
  -- 6~10등 limt 5,5 ->  6번부터 5개 가져옴
