@@ -1,0 +1,25 @@
+데이터는 유실이 되면 치명적이기때문에 백업을 해놓아야 함
+-- 오라클은 전문가가 있기 때문에  백업을 그 사람들이 함
+--mysql은 전문가가 따로 있지 않아 개발자가 해야함
+
+--툴을 이용한 내보내기
+--데이터베이스 클릭 -> 내보내기 -> 좌측 SQL형태를 가장많이 사용 -> 파일로 저장 -> 실행
+  (데이터 베이스 안에있는 테이블 전체 저장)
+  
+--cmd 환경
+mysql -utest1 -p1234 (본인이 설정한 비밀번호) apple
+select *from mbr_code;
+exit
+
+cd c:/
+mysqldump -utest1 -p1234 -apple > db.sql         -> 액세스 거부되어서 할수가 없음..   -> cmd를 관리자 모드로 실행
+apple 테이블 삭제 
+
+복구
+mysqldump -utest1 -p1234 apple < db.sql
+
+
+데이터(테이블) 일부 백업하기
+c:/>mysqldump -utest1 -p1234 apple post1> post1.sql
+데이터(테이블) 일부 받기
+c:/>mysql -utest1 -p1234 apple < post1.sql
