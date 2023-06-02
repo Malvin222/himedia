@@ -1,0 +1,44 @@
+[회원정보 관리 테이블]
+1. 회원 기본정보
+-- datetime : 오라클에서의 timestamp, 
+create table mbr_info(
+  unq int unsigned not null auto_increment,
+  userid varchar(20) not null,
+  pass varchar(100) not null,
+  name varchar(20) not null,
+  gender enum('M','F') not null,
+  birthday date not null,
+  phone varchar(20),
+  rdate datetime,
+  primary key(unq)
+  )
+ 2.회원 기타정보
+  -- mysql은 foreign key 설정불가 : 요즘 버전은 될 수도 있음
+ create table mbr_other(
+  userid varchar(20) not null,
+  job varchar(4),
+  hobby varchar(4),
+  blood enum('A','O','B','AB')
+  );
+ 3.코드 테이블
+ create table mbr_code(
+  unq int unsigned not null auto_increment,
+  code_type varchar(2),
+  code_id varchar(4),
+  code_name varchar(20),
+  primary key(unq)
+  );
+  
+  --데이터 입력
+  1.코드 테이블 데이터 입력
+  insert into mbr_code values('','c1','h001','태권도');
+  insert into mbr_code values('','c1','h002','야구');
+  insert into mbr_code values('','c1','h003','축구');
+  insert into mbr_code values('','c2','j001','개발');
+  insert into mbr_code values('','c2','j002','컨설팅');
+  insert into mbr_code values('','c2','j003','디자인');
+  
+  2.회원 기본정보 데이터 입력 --password : 암호화 함수
+  insert into mbr_info values('','test1',password('1234'),'홍길동','M','2000-12-25','010-777-7777','2021-01-10');
+  insert into mbr_info values('','test2',password('123456'),'이영희','F','1998-10-25','017-777-1212','2021-02-01');
+  insert into mbr_info values('','king1',password('11111'),'이성계','M','2001-07-07','010-2563-1234','2021-05-01');
