@@ -38,7 +38,15 @@ create table mbr_info(
   insert into mbr_code values('','c2','j002','컨설팅');
   insert into mbr_code values('','c2','j003','디자인');
   
-  2.회원 기본정보 데이터 입력 --password : 암호화 함수
+  2.회원 기본정보 데이터 입력 --password : 암호화 함수 ,  md5 : 암호화 함수  ,now() : 현재시간 함수
   insert into mbr_info values('','test1',password('1234'),'홍길동','M','2000-12-25','010-777-7777','2021-01-10');
   insert into mbr_info values('','test2',password('123456'),'이영희','F','1998-10-25','017-777-1212','2021-02-01');
   insert into mbr_info values('','test3',password('11111'),'이성계','M','2001-07-07','010-2563-1234',now());
+  insert into mbr_info values('','test4',md5('7777'),'호돌이','M','1988-07-07','010-3434-1212',now());
+  
+  select now();
+  3.기타정보 입력
+  insert into mbr_other values ('test1','j002','h003','O');
+  insert into mbr_other values ('test2','j003','h002','AB');
+  insert into mbr_other values ('test3','j001','h002','B');
+  --데이터 출력
