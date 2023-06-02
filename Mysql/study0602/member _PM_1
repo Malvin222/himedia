@@ -41,4 +41,4 @@ create table mbr_info(
   2.회원 기본정보 데이터 입력 --password : 암호화 함수
   insert into mbr_info values('','test1',password('1234'),'홍길동','M','2000-12-25','010-777-7777','2021-01-10');
   insert into mbr_info values('','test2',password('123456'),'이영희','F','1998-10-25','017-777-1212','2021-02-01');
-  insert into mbr_info values('','king1',password('11111'),'이성계','M','2001-07-07','010-2563-1234','2021-05-01');
+  insert into mbr_info values('','king1',password('11111'),'이성계','M','2001-07-07','010-2563-1234',now());
