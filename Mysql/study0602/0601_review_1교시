@@ -1,0 +1,31 @@
+--새 데이터베이스 생성
+apple2 , utf_general_ci
+
+--상단 -> 사용권한 
+새 사용자 추가 
+사용자명 : test2
+비밀번호 : 1234
+전체적 권한 모두체크
+
+--Post 파일 데이터 임포트
+테이블 생성 : create table post1 (
+            a1 char(6),
+            a2 varchar(50),
+            a3 varchar(50),
+            a4 varchar(50),
+            a5 varchar(50),
+            a6 varchar(50),
+            a7 varchar(100));
+확인 : 상단 데이터베이스 :apple
+
+임포트 (LOAD DATE) : post1 테이블 -> import -> 파일선택 :post.sql -> utf8 ->CSV using LOAD DATA -> 필드구분자 : ,
+      현직에서는 import를 LOAD DATE 라고 부름 (알고있어야함)     
+
+임포트 후 검색 : SELECT * FROM `post1` where a7 like '%월산%'
+데이터 중간에 끊김.
+truncate table post1;    :데이터 초기화
+
+post1.csv 파일 621715,경상남도,김해시,부곡동, , ,"월산마을부영1,2단지아파트 (101~206동)" 
+           변경  ->621715,경상남도,김해시,부곡동, , ,'월산마을부영1,2단지아파트 (101~206동)'   
+재임포트
+파일선택 :post.sql -> utf8 ->CSV using LOAD DATA -> 필드구분자 : ,
