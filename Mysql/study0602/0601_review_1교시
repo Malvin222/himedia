@@ -18,7 +18,7 @@ apple2 ,  *****************collation:utf_general_ci******************* 중요 �
             a7 varchar(100));
 확인 : 상단 데이터베이스 :apple
 
-임포트 (LOAD DATE) : post1 테이블 -> import -> 파일선택 :post.sql -> utf8 ->CSV using LOAD DATA -> 필드구분자 : , (쉼표)
+임포트 (LOAD DATE) : ***post1 테이블*** -> import -> 파일선택 :post.sql -> utf8 ->CSV using LOAD DATA -> 필드구분자 : , (쉼표)
       현직에서는 import를 LOAD DATE 라고 부름 (알고있어야함)     
 
 임포트 후 검색 : SELECT * FROM `post1` where a7 like '%월산%'
