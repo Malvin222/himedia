@@ -1,0 +1,19 @@
+ 
+(패키지 생성)
+-dept -> 클래스생성 : -DeptSelectlist
+                     -DeptInsert
+                     -DeptUpate
+                     -DeptDelete
+
+(패키지 생성)
+emp  -> 클래스 생성: -EmpSelectList
+                        -총 데이터 개수 출력
+                        -전체 목록 출력(사원번호)
+                    -EmpInsert
+                        -사원번호 중복체크
+                        -모든 항목 사용자에게 받고 저장
+                    -EmpUpdate
+                        -사원번호를 조건으로 변경
+                    -EmpDelete
+                        -사원번호를 조건으로 삭제
+                        -재확인후 삭제
