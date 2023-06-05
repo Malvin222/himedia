@@ -1,3 +1,10 @@
+// 포트 확인
+//오라클 설치할 때 SID 를 지정
+//신경 안쓰고 Next 버튼 눌렀다면 기본값
+//Express Edition : xe 
+//Enterprise Edition : orcl 
+
+
 package dept;
 
 import java.sql.Connection;
