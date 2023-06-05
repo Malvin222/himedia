@@ -4,6 +4,16 @@ Oracle 관리툴
 토드 / Toad
 https://www.quest.com/products/toad-for-oracle/software-downloads.aspx
 Toad for Oracle Developer Edition 다운로드
+
+TNS(오라클 접속정보)
+ C:\app\hi-guri\product\21c\homes\OraDB21Home1\NETWORK\ADMIN\tnsnames.ora
+ 
+좌측 위 콘센트 모양
+user : c##java
+password 1234
+Direct 
+Host : DESKTOP-BNF4R96 Port : 1522 SID: XE -> 컴퓨터 마다 다름 위 tnsname.or에서 확인해 줘야함
+
 (연동)
 -eclipse -> 프로젝트 오른쪽마우스 클릭 -> build path-> configure build path->상단 탭메뉴 Libraries -> Modulepath 클릭
  우측 add external jars -> ojdbc6.jars (카페에 있음)
