@@ -14,9 +14,27 @@ password 1234
 Direct 
 Host : DESKTOP-BNF4R96 Port : 1522 SID: XE -> 컴퓨터 마다 다름 위 tnsname.or에서 확인해 줘야함
 
+File 바로 아래 아이콘
+Schema Brower :테이블 목록
+
 (연동)
 -eclipse -> 프로젝트 오른쪽마우스 클릭 -> build path-> configure build path->상단 탭메뉴 Libraries -> Modulepath 클릭
  우측 add external jars -> ojdbc6.jars (카페에 있음)
  
 (패키지 생성)
--dept -> 클래스생성 : DeptSelectlist
+-dept -> 클래스생성 : -DeptSelectlist
+                     -DeptInsert
+                     -DeptUpate
+                     -DeptDelete
+
+(패키지 생성)
+emp  -> 클래스 생성: -EmpSelectList
+                        -총 데이터 개수 출력
+                        -전체 목록 출력(사원번호)
+                    -EmpInsert
+                        -사원번호 중복체크
+                        -모든 항목 사용자에게 받고 저장
+                    -EmpUpdate
+                        -사원번호를 조건으로 변경
+                    -EmpDelete
+                        -사원번호를 조건으로 삭제
