@@ -1,5 +1,9 @@
 드라이버 - java + oracle => ojdbc 6.jar           ※14버전이 낮은 버전
 
+Oracle 관리툴 
+토드 / Toad
+https://www.quest.com/products/toad-for-oracle/software-downloads.aspx
+Toad for Oracle Developer Edition 다운로드
 (연동)
 -eclipse -> 프로젝트 오른쪽마우스 클릭 -> build path-> configure build path->상단 탭메뉴 Libraries -> Modulepath 클릭
  우측 add external jars -> ojdbc6.jars (카페에 있음)
