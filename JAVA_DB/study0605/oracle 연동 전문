@@ -3,6 +3,8 @@
 //신경 안쓰고 Next 버튼 눌렀다면 기본값
 //Express Edition : xe 
 //Enterprise Edition : orcl 
+//오류뜬다면 오타나 자바 다른버전으로 재설치
+
 
 
 package dept;
