@@ -25,7 +25,7 @@ public class DeptAdmin extends DbConnect {
 			break;
 			case 4 : deptDelete();
 			break;
-			default : System.out.println("없는번입니다.");
+			default : System.out.println("없는번호 입니다.");
 		}
 		
 	}
