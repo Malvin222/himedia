@@ -73,17 +73,124 @@ public class EmpSearchList extends DbConnect{
 			System.out.println("***검색 결과가 없습니다.***");
 		}
 	}
-	public static void dnameSearch() {
+	
+	public static void dnameSearch() throws Exception{
+		Statement stmt =Connection().createStatement();
+		Scanner scn = new Scanner(System.in);
+		System.out.println("[부서별 겸색]");
+		System.out.println("부서명>>");
+		String dname = scn.next();
 		
+		String sql ="Select rownum,"
+					+ " ename ||'('||empno||')' ename,"
+					+ " job"
+					+ " ,dname "
+					+ " from emp e,dept d "
+					+ " where e.deptno = d.deptno "
+					+ " and d.dname=upper('"+dname+"')";
+		ResultSet rs = stmt.executeQuery(sql);
+		System.out.println("[사원정보]");
+		int cnt =0;
+		System.out.println("번호\t 사원명(사원번호)\t 업무\t 부서명");
+		while(rs.next()) {
+			cnt++;
+			String rownum =rs.getString("rownum");
+			String ename =rs.getString("ename");
+			String job =rs.getString("job");
+			String dname1 =rs.getString("dname");
+			System.out.println(rownum+"\t"+ename+"\t"+job+"\t"+dname1);
+		}
+		if (cnt==0) {
+			System.out.println("***검색 결과가 없습니다***");
+		}
 	}
-	public static void jobSearch() {
-		
+	public static void jobSearch() throws Exception {
+		Statement stmt = Connection().createStatement();
+		Scanner scn = new Scanner(System.in);
+		System.out.println("[업무별 검색]");
+		System.out.println("업무명>>");
+		String jobname =scn.next();
+		String sql ="select rownum"
+				+ ",ename||'('||empno||')' ename"
+				+ ",job"
+				+ ",dname "
+				+ "from emp e, dept d "
+				+ "where e.deptno=d.deptno and "
+				+ "job=upper('"+jobname+"')";
+		ResultSet rs = stmt.executeQuery(sql);
+		System.out.println("[사원정보]");
+		int cnt = 0;
+		System.out.println("번호\t 사원명(사원번호)\t 업무\t 부서명");
+		while(rs.next()) {
+			cnt++;
+			String rownum =rs.getString("rownum");
+			String ename =rs.getString("ename");
+			String job =rs.getString("job");
+			String dname =rs.getString("dname");
+			System.out.println(rownum+"\t"+ename+"\t"+job+"\t"+dname);
+		}
+		if (cnt==0) {
+			System.out.println("***검색 결과가 없습니다***");
+		}
 	}
-	public static void mgrnameSearch() {
-		
+	public static void mgrnameSearch() throws Exception {
+		Statement stmt = Connection().createStatement();
+		Scanner scn = new Scanner(System.in);
+		System.out.println("[업무별 검색]");
+		System.out.println("업무명>>");
+		String mgr_name =scn.next();
+		String sql ="select rownum"
+				+ ",e2.ename||'('||e2.empno||')' ename"
+				+ ",e1.ename mgrname"
+				+ ",e2.job from emp e1,emp e2, dept d "
+				+ "where e2.deptno=d.deptno "
+				+ "and e1.empno=e2.mgr  "
+				+ "and e1.ename=upper('"+mgr_name+"')";
+		ResultSet rs = stmt.executeQuery(sql);
+		System.out.println("[사원정보]");
+		int cnt = 0;
+		System.out.println("번호\t 사원명(사원번호)\t 매니저명\t 업무");
+		while(rs.next()) {
+			cnt++;
+			String rownum =rs.getString("rownum");
+			String ename =rs.getString("ename");
+			String mgrname =rs.getString("mgrname");
+			String job =rs.getString("job");
+			System.out.println(rownum+"\t"+ename+"\t"+mgrname+"\t"+job);
+		}
+		if (cnt==0) {
+			System.out.println("***검색 결과가 없습니다***");
+		}
 	}
-	public static void salSearch() {
-		
+	public static void salSearch() throws Exception{
+		Statement stmt = Connection().createStatement();
+		Scanner scn = new Scanner(System.in);
+		System.out.println("[급여별 검색]");
+		System.out.println("급여등급>>");
+		String sal_grade =scn.next();
+		String sql ="select rownum,"
+				+ "e.ename||'('||e.empno||')' ename"
+				+ ",sal "
+				+ ",job "
+				+ "from emp e,salgrade s"
+				+ " where e.sal>s.losal "
+				+ "and e.sal<s.hisal "
+				+ "and grade='"+sal_grade+"'";
+		ResultSet rs = stmt.executeQuery(sql);
+		System.out.println("[사원정보]");
+		int cnt = 0;
+		System.out.println("번호\t 사원명(사원번호)\t 급여\t 업무");
+		while(rs.next()) {
+			cnt++;
+			String rownum =rs.getString("rownum");
+			String ename =rs.getString("ename");
+			String sal =rs.getString("sal");
+			String job =rs.getString("job");
+			System.out.println(rownum+"\t"+ename+"\t"+sal+"\t"+job);
+		}
+		if (cnt==0) {
+			System.out.println("***검색 결과가 없습니다***");
+		}
 	}
 	
 }
