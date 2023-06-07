@@ -1,1 +1,14 @@
+[부서정보관리] -DeptAdmin.java
+1.부서목록
+2.부서입력
+3.부서변경
+4.부서삭제
 
+번호>>
+
+-DeptAdmin.java
+(0)main()
+(1)deptList()
+(2)deptInsert()
+(3)deptUpdate()
+(4)deptDelete()
