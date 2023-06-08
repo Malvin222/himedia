@@ -18,7 +18,7 @@ public class EmpImportService extends DbConnect {
 		empImport(path);
 	}
 	
-	public static void empImport(String path) throws Exception{
+	public static void empImport(String file_path) throws Exception{
 		
 		//DB 연결
 		Statement stmt = Connection().createStatement();
@@ -26,7 +26,7 @@ public class EmpImportService extends DbConnect {
 		Calendar cal = Calendar.getInstance();
 		long t1 = cal.getTimeInMillis();
 		//경로의 인식
-		FileReader file = new FileReader(path);
+		FileReader file = new FileReader(file_path);
 		BufferedReader buffer = new BufferedReader(file);
 		//내용 읽기
 		String rowData ="";
