@@ -2,7 +2,8 @@
 post1.csv -> post2 테이블
 
 1. PostImportService
-
+  텍스트파일(post.csv) -> DB테이블(post) :: 저장
 [데이터 익스포트 작업]
 2. PostExportService
+  DB테이블(post) -> 텍스트파일(post.csv)
 
