@@ -1,1 +1,8 @@
+[데이터 임포트 작업]
+post1.csv -> post2 테이블
+
+1. PostImportService
+
+[데이터 익스포트 작업]
+2. PostExportService
 
