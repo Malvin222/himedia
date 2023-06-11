@@ -27,7 +27,7 @@ Select i.userid userid
                 and s.hakgi='1';
                 
 
-       --¹İ                     
+       --ë°˜                     
         select i.userid,i.name,i.school,s.grade,s.hakgi,s.ban,round((s.eng+s.kor+s.math)/3) avg
                     from student_info i,student_score s
                     where i.userid=s.userid 
@@ -36,7 +36,7 @@ Select i.userid userid
                             and s.ban='1'
                             order by avg desc;
 
-        --ÀüÃ¼¼®Â÷          
+        --ì „ì²´ì„ì°¨          
           select rank()over (order by avg desc) rank,userid,avg from ( select i.userid ,round((s.eng+s.kor+s.math)/3) avg
                     from student_info i,student_score s
                     where i.userid=s.userid 
@@ -44,16 +44,15 @@ Select i.userid userid
                             and s.hakgi='2'
                             order by avg desc) a;
                             
-      --¹İ¼®Â÷                  
-           select b.*,rank()over (order by avg desc) classrank 
+      --ë°˜ì„ì°¨                  
+         select c.*from ( select b.*,rank()over (order by avg desc) classrank 
                 from (select a.*,rank()over (order by avg desc) schoolrank 
-                
                 from(select i.userid,i.name,i.school,s.grade,s.hakgi,s.ban,round((s.eng+s.kor+s.math)/3) avg, eng,kor,math,(eng+kor+math) hap
                     from student_info i,student_score s
                     where i.userid=s.userid 
                             and s.grade='1'
                             and s.hakgi='1'
                             order by avg desc)a)b
-                            where ban = (select ban from student_score where userid='aa1' and grade='1' and hakgi='1')
-                            and userid ='aa1'
+                            where ban = (select ban from student_score where userid='aa2' and grade='1' and hakgi='1'))c
+                            where userid='aa2'
                             ;
