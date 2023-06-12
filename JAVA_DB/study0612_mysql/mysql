@@ -1,0 +1,12 @@
+
+//mysql 연동 메소드
+
+JAVA_DB/study0612/	public static Connection mysqlConnect() throws Exception{
+		//jdbc->자바데이터베이스 커넥트프로그램, /localhost:3306->위치정보/apple1004->데이터베이스명 , 인코딩 설정
+	String url="jdbc:mysql://localhost:3306/apple1004?useUnicode=true&characterEncoding=utf8";
+      String username="test1004";
+      String userpass="123456";
+      Class.forName("com.mysql.jdbc.Driver");
+      Connection con = DriverManager.getConnection(url,username,userpass);
+       return con;
+   }
