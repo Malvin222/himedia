@@ -1,3 +1,14 @@
+1.사원 테이블을 통한 연동 실습
+(1) 기본 출력/입력/수정/삭제
+ 출력(전체)/입력:(전체)/수정(급여,입사일)/삭제(사원번호)
+ (2)특정 목적별 단위별 출력
+ 	-부서별 직원 출력
+(3) 페이지별 출력
+	-한 화면에 5개씩 출력한다.
+	
+	
+
+
 
 //mysql 연동 메소드
 
@@ -10,3 +21,7 @@ JAVA_DB/study0612/	public static Connection mysqlConnect() throws Exception{
       Connection con = DriverManager.getConnection(url,username,userpass);
        return con;
    }
+   
+   
+   
+
