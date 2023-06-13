@@ -49,6 +49,7 @@ String name	= request.getParameter("name");
 이름<input type="text" name="name"> <br>
 <input type="submit" value="전송"
 전송되는 데이터들이 보이지 않음
+-> method="get" -> 메소드를 겟으로 바뀌면 주소에 데이터들이 노출됨
 ------
 2.getTest3_sub.jsp
 
