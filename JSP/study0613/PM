@@ -47,7 +47,11 @@ String name	= request.getParameter("name");
 아이디<input type="text" name="userid"> <br>
 암호<input type="text" name="pass"> <br>
 이름<input type="text" name="name"> <br>
-<input type="submit" value="전송"
+성별<input type="radio" name="gender" value="M">남성,
+<input type="radio" name="gender" value="F">여성<br>
+<input type="submit" value="전송">
+</form>
+
 전송되는 데이터들이 보이지 않음
 -> method="get" -> 메소드를 겟으로 바뀌면 주소에 데이터들이 노출됨
 ------
