@@ -11,5 +11,5 @@ out.print(eng2);
 http://웹주소:포트번호/프로젝트명/파일명
 https://localhost:8080/project%20jsp1/getTest1.jsp  ? eng =100   -> 변경 eng =100 &kor=90
 
-GET방식: 주소뒤에 변수값을 설정하는 방식
+GET방식: 주소표기 뒤에 변수를 설정하여 전송하는 방식
 
