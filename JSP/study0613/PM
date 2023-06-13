@@ -1,0 +1,13 @@
+[ 데이터전송 ]
+-GET 방식 / POST방식
+
+1.getTest1.jsp -> 파일생성
+
+외부에서 eng 에 대한 값을 받아올거임
+<%
+String eng2 = request.getParameter("eng");
+out.print(eng2);
+%>
+http://웹주소:포트번호/프로젝트명/파일명
+https://localhost:8080/project%20jsp1/getTest1.jsp  ? eng =100   -> eng =100 &kor=90
+
