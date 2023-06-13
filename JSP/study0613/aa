@@ -11,4 +11,9 @@ Apache-Tomcat 설치
 https://tomcat.apache.org/
 
 좌측 다운로드 
-Tomcat 11(alpha) (버전 높은게 낫다고 하심) -> core 64-bit
+1. Tomcat 10.1 (버전 높은게 낫다고 하심) -> core 64-bit
+2. 아파치 톰캣 서버 이클립스와 연결
+  -wundow->preferences -> sever ->runtime Enviroments - >ADD -> Tomcat 추가
+3.
+  -window ->preferences -> Jsp File -> UTF-8 (html,css,js,jsp) 모두 utf-8
+  
