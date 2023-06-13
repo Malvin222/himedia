@@ -20,3 +20,6 @@ https://tomcat.apache.org/
 jsp 인식 못할시 
 새 jsp file 생성 및 
 톰캣 버전 다운
+
+1.하단 탭 서버선택 ->톰캣 
+2.서버 우클릭 애드 앤 리무브 -> jsp.project를 우측으로 추가
