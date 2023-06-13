@@ -4,6 +4,7 @@
 1.getTest1.jsp -> 파일생성
 
 외부에서 eng 에 대한 값을 받아올거임
+외부에서 받아오는 데이터는 무조건 String 타입으로 받아옴
 <%
 String eng2 = request.getParameter("eng");
 out.print(eng2);
