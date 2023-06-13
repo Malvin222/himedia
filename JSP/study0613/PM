@@ -60,3 +60,4 @@ String gender = request.getParameter("gender");
 2.getTest3_sub.jsp
 체크박스 다중선택시 반복문 선언으로 받아와야함
 
+String [] hobby =request.getParameterValues("hobby");
