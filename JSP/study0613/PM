@@ -17,7 +17,8 @@ GET방식: 주소표기 뒤에 변수를 설정하여 전송하는 방식
 2.getTest2.jsp-> 파일생성
 <a href="http://localhost:8080/jsp_project/getTest1.jsp?eng=80&kor=90">점수 전송</a>    ->링크
 
-{아이디&암호 전송}
+--------------------------------------------------------------------------------------------------
+{아이디&암호 전송} GET방식 전송
 1.getTest3.jsp ->파일생성
 <a href="getTest3_sub.jsp?userid=hong&pass=1234&name=홍길동">홍길동</a>
 	<br>
@@ -31,3 +32,8 @@ String name	= request.getParameter("name");
 <%=userid%><br>
 <%=pass %><br>
 <%=name %>
+
+--------------------------------------------------------------------------------------------------
+{아이디 & 암호 전송} POST방식 전송
+1.postTest3.jsp
+2.getTest3_sub.jsp
