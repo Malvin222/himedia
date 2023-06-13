@@ -19,4 +19,15 @@ GET방식: 주소표기 뒤에 변수를 설정하여 전송하는 방식
 
 {아이디&암호 전송}
 1.getTest3.jsp ->파일생성
-2.getTest3_sub.jsp->파일생성
+<a href="getTest3_sub.jsp?userid=hong&pass=1234&name=홍길동">홍길동</a>
+	<br>
+<a href="getTest3_sub.jsp?userid=soonsin&pass=1111&name=이순신">이순신</a>
+2.getTest3_sub.jsp ->파일생성 (단독실행불가)
+<%
+String userid = request.getParameter("userid");
+String pass = request.getParameter("pass");
+String name	= request.getParameter("name");
+%>
+<%=userid%><br>
+<%=pass %><br>
+<%=name %>
