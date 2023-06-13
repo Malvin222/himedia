@@ -33,11 +33,12 @@ GET방식: 주소표기 뒤에 변수를 설정하여 전송하는 방식
 String userid = request.getParameter("userid");
 String pass = request.getParameter("pass");
 String name	= request.getParameter("name");
+String gender = request.getParameter("gender");
 %>
-<%=userid%><br>
-<%=pass %><br>
-<%=name %>
-
+전송Id:<%=userid%><br>
+전송Pw:<%=pass %><br>
+전송Nm:<%=name %><br>
+전송성별:<%=gender %>
 전송되는 데이터 들은 get방식으로 들어오든 post방식으로 들어오든 getParameter 메소드 사용
 --------------------------------------------------------------------------------------------------
 {아이디 & 암호 전송} POST방식 전송
