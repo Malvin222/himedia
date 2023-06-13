@@ -23,6 +23,11 @@ GET방식: 주소표기 뒤에 변수를 설정하여 전송하는 방식
 <a href="getTest3_sub.jsp?userid=hong&pass=1234&name=홍길동">홍길동</a>
 	<br>
 <a href="getTest3_sub.jsp?userid=soonsin&pass=1111&name=이순신">이순신</a>
+
+전송되는 데이터들이 보임
+
+------
+-
 2.getTest3_sub.jsp ->파일생성 (단독실행불가)
 <%
 String userid = request.getParameter("userid");
@@ -37,4 +42,13 @@ String name	= request.getParameter("name");
 --------------------------------------------------------------------------------------------------
 {아이디 & 암호 전송} POST방식 전송
 1.postTest3.jsp
+
+<form name="frm" method="post" action="getTest3_sub.jsp">
+아이디<input type="text" name="userid"> <br>
+암호<input type="text" name="pass"> <br>
+이름<input type="text" name="name"> <br>
+<input type="submit" value="전송"
+전송되는 데이터들이 보이지 않음
+------
 2.getTest3_sub.jsp
+
