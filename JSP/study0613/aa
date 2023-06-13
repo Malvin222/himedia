@@ -28,4 +28,4 @@ jsp 인식 못할시
 window -> show view -> console, server
 
 콘솔창에러
--
+-run -> runconfiguration ->apache Tom ->Tomcat 9 -> common -> use X-..;;
