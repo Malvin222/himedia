@@ -23,3 +23,9 @@ jsp 인식 못할시
 
 1.하단 탭 서버선택 ->톰캣 
 2.서버 우클릭 애드 앤 리무브 -> jsp.project를 우측으로 추가
+
+콘솔창 꺼내기
+window -> show view -> console, server
+
+콘솔창에러
+-
