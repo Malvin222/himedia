@@ -2,3 +2,13 @@
 2. 이클립스 다운로드(설치프로그램) 
 다운로드 후 실행
 설치창에서 Enterproise Java and Web Developers 선택 후 설치 
+
+project -> Dynamic web project 
+
+JAVA EE 환경 -> 우측상단 Open perspective
+
+Apache-Tomcat 설치
+https://tomcat.apache.org/
+
+좌측 다운로드 
+Tomcat 11(alpha) (버전 높은게 낫다고 하심) -> core 64-bit
