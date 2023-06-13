@@ -40,7 +40,7 @@ String gender = request.getParameter("gender");
 전송Nm:<%=name %><br>
 전송성별:<%=gender %>
 전송되는 데이터 들은 get방식으로 들어오든 post방식으로 들어오든 getParameter 메소드 사용
-@@@@@@@@@@@@@@한글 깨질시 상단에 <% request.setCharacterEncoding("UTF-8"); %>@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@  한글 깨질시 상단에 <% request.setCharacterEncoding("UTF-8"); %>  @@@@@@@@@@@@@@@@@@@@@@
 --------------------------------------------------------------------------------------------------
 {아이디 & 암호 전송} POST방식 전송
 1.postTest3.jsp
