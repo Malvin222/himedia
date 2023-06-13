@@ -58,4 +58,5 @@ String gender = request.getParameter("gender");
 -> method="get" -> 메소드를 겟으로 바뀌면 주소에 데이터들이 노출됨
 ------
 2.getTest3_sub.jsp
+체크박스 다중선택시 반복문 선언으로 받아와야함
 
