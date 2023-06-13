@@ -17,3 +17,6 @@ https://tomcat.apache.org/
 3.
   -window ->preferences -> Jsp File -> UTF-8 (html,css,js,jsp) 모두 utf-8
   
+jsp 인식 못할시 
+새 jsp file 생성 및 
+톰캣 버전 다운
