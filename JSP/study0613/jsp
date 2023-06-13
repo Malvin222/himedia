@@ -1,3 +1,4 @@
+[======설치======]
 1.구글 : 이클립스 검색
 2. 이클립스 다운로드(설치프로그램) 
 다운로드 후 실행
@@ -9,14 +10,14 @@ JAVA EE 환경 -> 우측상단 Open perspective
 
 Apache-Tomcat 설치
 https://tomcat.apache.org/
-
+[======설정======]
 좌측 다운로드 
 1. Tomcat 10.1 (버전 높은게 낫다고 하심) -> core 64-bit
 2. 아파치 톰캣 서버 이클립스와 연결
   -wundow->preferences -> sever ->runtime Enviroments - >ADD -> Tomcat 추가
 3. 인코딩
   -window ->preferences -> Jsp File -> UTF-8 (html,css,js,jsp) 모두 utf-8
-  
+[=======에러======]
 jsp 인식 못할시 
 새 jsp file 생성 및 
 톰캣 버전 다운
@@ -29,3 +30,7 @@ window -> show view -> console, server
 
 콘솔창에러
 -run -> runconfiguration ->apache Tom ->Tomcat 9 -> common -> use X-..;;
+
+[======구동======]
+구동 구조
+JSP->apache(해석) -> 브라우저
