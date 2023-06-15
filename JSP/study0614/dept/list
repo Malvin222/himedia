@@ -3,5 +3,6 @@
 2. 등록화면 deptWrite.jsp
 3. 등록처리 deptWriteSave.jsp
 4. 수정화면 deptModify.jsp
+  --저장내용 출력
 5. 수정처리 deptModifySave.jsp
 6. 삭제처리 deptDelete.jsp
