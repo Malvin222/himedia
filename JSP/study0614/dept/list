@@ -1,0 +1,7 @@
+{부서관리}
+1. 목록화면 deptList.jsp
+2. 등록화면 deptWrite.jsp
+3. 등록처리 deptWriteSave.jsp
+4. 수정화면 deptModify.jsp
+5. 수정처리 deptModifySave.jsp
+6. 삭제처리 deptDelete.jsp
