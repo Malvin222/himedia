@@ -1,0 +1,12 @@
+create table notice (
+unq number not null primary key,
+title varchar2(300) not null,
+content varchar2(4000) not null,
+hits number default 0,
+rdate timestamp
+);
+
+create sequence notice_unq
+increment by 1
+start with 1 
+maxvalue 9999999;
