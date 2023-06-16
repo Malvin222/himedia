@@ -1,0 +1,16 @@
+[공지사항] 만들기
+
+---------------------------
+1.notice_write.jsp
+2.notice_write_save.jsp
+3.notice_list.jsp
+4.notice_modify.jsp
+5.notice_modify_save.jsp
+6.notice_delete.jsp
+---------------------------
+[등록/수정 화면]
+제목 :
+내용 :
+-----------------------------
+[테이블]
+고유번호/제목/내용(4000)/조회수/등록일
