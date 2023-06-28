@@ -1,0 +1,54 @@
+공지사항
+댓글게시판
+답변게시판
+자료게시판
+
+
+1. 등록 화면 - reBoardWrite.jsp
+2. 등록 저장 처리-reBoardWriteSave.jsp
+
+3. 목록 화면 - reBoardList.jsp
+
+4. 상세 화면 - reBoardDetail.jsp
+			[이전] [수정] [삭제] [답변]
+
+5. 수정화면 - reBoardModify.jsp
+6. 수정 저장처리 -reBoardModifySave.jsp
+
+7. 암호확인 화면 - passWrite.jsp
+8. 삭제 처리 -reBoardDelete.jsp
+	>댓글 존재여부
+		-존재 o : update
+		-존재 x : delete
+	
+9. 답변 화면 -replyWrite.jsp
+10. 답변 저장 처리 - replyWriteSave.jsp 
+
+
+create table reboard(
+unq number not null primary key,
+title varchar2(100) not null,
+pass varchar2(100) not null,
+name varchar2(20),
+content varchar2(4000),
+hits number default 0,
+rdate timestamp,
+gid number not null,
+thread varchar2(50) not null);
+
+
+		unq	 gid  thread
+(1 신)    1	  1		a
+(2 신)    2	  2		a
+(3 신)    3	  3		a
+(4 댓)    4	  2		aa
+(5 댓)    5	  2		ab
+(6 댓)    6	  3		aa
+(7 신)    7	  4		a
+(8 댓)    8	  4		aa
+(9 댓)    9	  4		ab
+(10 댓)  10	  4		ac
+(11 댓)  11	  3		ab
+(12 신)  12    5    a
+
+max(gid)+1
