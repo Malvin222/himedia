@@ -14,3 +14,17 @@ root(슈퍼유저) -->]#ls
 ]#cd - 경로이동
 ]#rmdir abc2 -폴더삭제
 ]#rm -rf abc1 - 폴더(파일) 삭제
+]#cp /etc/passwd passwd.txt
+]#cat passwd.txt -파일내용확인 및 파일내용주입시 사용
+]#cat > test1.txt
+ctrl + C -종료
+
+허가권변경
+]#cd (enter) - 홈으로 이동
+]#touch test11.txt
+]#ls -al 
+-rw-r--r-- =>  rwx => r(4),w(2),x(1)
+]#chmod 777 test11.txt
+]#ls -al 
+  (종류) 소유주 소유그룹 타인
+          rwx    rwx      rwx
