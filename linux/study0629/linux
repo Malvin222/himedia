@@ -8,5 +8,7 @@ root(슈퍼유저) -->]#ls
 ]#touch a.txt -생성
 ]#ls -al -확인
 ]#cp a.txt b.txt- 복사   원본이름 복사본이름
-[#mv b.txt b1.txt - 잘라내기 원본명 복사본명
-
+]#mv b.txt b1.txt - 잘라내기 원본명 복사본명
+]#rm a.txt -파일삭제
+]#mkdir abc1 - 폴더생성
+]#cd - 경로이동
