@@ -1,0 +1,33 @@
+create table sche_mgr(
+ unq number not null ,
+ userid varchar2(50) not null ,
+ sche_date date not null ,
+ title varchar2(100) not null,
+ content varchar2(4000),
+ view1 char(1) default 'Y',
+ constraint sche_mgr_pk primary key (userid,sche_date) );
+ 
+create sequence sche_mgr_seq
+ start with 1 
+ increment by 1
+ maxvalue 999999;
+ 
+drop table sche_mgr;
+
+
+merge
+	into sche_mgr s
+	using on
+		s.userid='test12'
+	and to_char(s.sche_date,'yyyy-mm-dd') = '2023-06-01'
+	
+when matched then
+	update sche_mgr set
+	sql = " update sche_mgr set "
+		 +"   title='"+title+"' "
+		 +",  view1='"+view1+"' "
+		 +",  content='"+content+"' "
+		 +"   where "
+		 +"   userid = '"+userid+"' and to_char(sche_date,'yyyy-mm-dd')='' ";
+	
+	
