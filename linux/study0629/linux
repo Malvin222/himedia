@@ -12,4 +12,5 @@ root(슈퍼유저) -->]#ls
 ]#rm a.txt -파일삭제
 ]#mkdir abc1 - 폴더생성
 ]#cd - 경로이동
-]#rmdir abc2 -파일삭제
+]#rmdir abc2 -폴더삭제
+]#rm -rf abc1 - 폴더(파일) 삭제
