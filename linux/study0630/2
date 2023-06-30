@@ -1,0 +1,8 @@
+cat > test3.txt -내용입력
+ls -al
+ctrl +c
+cat test3.txt
+chmod a+x test3.txt
+ls -al test3.txt
+test3.txt  ----실패
+./test3.txt ->파일실행
