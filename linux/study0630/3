@@ -56,13 +56,29 @@ vi /etc/issue
 -------------------
 {파일찾기}
 find /-name passwd
-find / -user linux
+find / -user test2 ---test2 계정이 소유주로 되어있는 파일들
+find / -perm 777
 --------------------
 {출력제한}
 cat /etc/passwd
 head -5 /etc/passwd
 tail -5 /etc/passwd
 --------------------
-{프로세스}
+{프로세스 강제종료}
+- 프로그램 > 프로세스 :  
 ps -aux ->현재 실행중인 프로세서 출력
+vi abc.txt -->오픈하고 그냥 열어놓음
+다른콘솔에서 root 로그인
+ps - aux ->프로그램 코드 확인
 kill -9 number ->프로세서 삭제
+--------------------
+{파일비교}
+cp /etc/passwd
+vp rvy/psddeef
+hunn =0;
+vi p3 ='
+pusff -
+
+---------------
+{less} 화면단위 끊기 옵션
+ls /etc |less
