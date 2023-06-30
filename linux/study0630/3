@@ -34,3 +34,35 @@ pwd
 {절대경로}
 cd /home/aa/a1
 pwd
+------------------------
+[계정생성]
+useradd test1
+
+(계정명): (암호):(계정ID):(그룹ID):(홈드렉토리):(리눅스쉘)
+linux:x:1000:1000:://home/linux:/bin/bash
+test1:x:1000:1000:://home/test1:/bin/bash
+test2:x:1000:1000:://home/test2:/bin/bash
+
+cat/etc/shadow 암호등록파일
+-----------------------------
+{계정삭제}
+userdel -r test1
+cat /etc/passwd
+------------------
+who -접속자 목록확인
+-------------------
+{로그인 메세지}
+vi /etc/issue
+-------------------
+{파일찾기}
+find /-name passwd
+find / -user linux
+--------------------
+{출력제한}
+cat /etc/passwd
+head -5 /etc/passwd
+tail -5 /etc/passwd
+--------------------
+{프로세스}
+ps -aux ->현재 실행중인 프로세서 출력
+kill -9 number ->프로세서 삭제
