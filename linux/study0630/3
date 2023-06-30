@@ -1,0 +1,12 @@
+vi pass2.txt
+[vi editer]
+2강 내용 
+x 버튼 -> 글자한개 삭제
+dd -> 한줄 삭제
+yy -> 한줄저장
+p -> 붙여넣기
+
+------------------------------
+ls -l etc > etc.txt
+vi etc.txt
+:set number
