@@ -10,3 +10,27 @@ p -> 붙여넣기
 ls -l etc > etc.txt
 vi etc.txt
 :set number
+---------------------------------
+su - root   계정변경
+password:
+pwd
+/root
+
+(1) /etc 디렉토리로 이동
+cd /etc 
+pwd
+(2) 리눅스계정의 홈디렉토리
+cd /home/linux
+pwd
+(3) 생성 디렉토리로 이동
+mkdir a1
+mkdir a2
+cd a1
+pwd
+
+{상대경로}
+cd ../a2
+pwd
+{절대경로}
+cd /home/aa/a1
+pwd
