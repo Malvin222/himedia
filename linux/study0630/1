@@ -3,3 +3,12 @@ F2 ~ F6 콘솔화면
 
 root ->슈퍼유저 ]#
 aa ->일반유저 ]$
+
+rm Test1.java
+touch Test2.java ->파일생성
+rm -f Test2.java   -f >> 강제삭제
+
+rmdir java1 -> 폴더삭제
+
+touch java2/Test1.java
+ls -al java2
