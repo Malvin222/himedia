@@ -1,0 +1,21 @@
+touch test2.txt
+ls -al test2.txt
+{허가권}
+-rw-r--r-- 644
+
+    소유주  소유그룹  타인
+-  rw-       r--      r--
+
+chmod 777 test2.txt
+chmod 000 test2.txt
+-----------------------------
+chmod a+x test3.txt
+-rwxr-xr-x
+
+chmod o-x test3.txt
+-rwxr-xr--
+
+chmod g+w test2.txt
+-rwxrwxr--
+chmod a-rwx test2.txt --> 허가권 제거
+--------------------------------------
