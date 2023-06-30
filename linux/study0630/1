@@ -14,3 +14,4 @@ touch java2/Test1.java
 ls -al java2
 
 rmdir java2 ->실패 (디렉토리 공간이 빈공간이 아니라서 삭제할수가 없음)
+rm -rf java2 ->디렉토리 강제 삭제
