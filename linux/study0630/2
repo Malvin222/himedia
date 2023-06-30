@@ -6,3 +6,7 @@ chmod a+x test3.txt
 ls -al test3.txt
 test3.txt  ----실패
 ./test3.txt ->파일실행
+
+------------------------------
+du     //디렉토리 사용량 출력
+df -h  //파티션의 사용량 출력
