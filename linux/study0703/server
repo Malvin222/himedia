@@ -22,5 +22,9 @@ service sshd stop
 1. cron : 예약시스템
 2. tar : 압축(중요)
 3. ping : 패킷
-4. nslookup : 네임서버 
+4. nslookup : 특정 도메인의 네임서버 확인 명령 
 5. ssh : 리눅스명령어 사용을 위한 접근 프로그램
+=============================================
+tar cvfz / tmp/etc.tar.gz /etc  ;;/etc 디렉토리 압축
+cd /tmp
+tar xvfz etc.tar.gz ;;압축해제
