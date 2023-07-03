@@ -5,3 +5,5 @@ crontab -e       -> 실행예약 (명령 입력)
 12 18 * * * touch /tmp/test1004.txt
 
 crontab -l ->실행 리스트 확인
+
+카페 보세여
