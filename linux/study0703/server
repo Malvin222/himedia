@@ -13,6 +13,7 @@ NAME서버
 {서버}
 1.ssh 접근을 위한 서버가동
 service sshd restart
+service sshd stop
 ---------------------
 {클라이언트(윈도)}
 1.putty 프로그램을 이용한 접근
