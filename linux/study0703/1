@@ -1,0 +1,4 @@
+su -root
+crontab -e       -> 실행예약 (명령 입력)
+분 시 일 월 요일 touch/tmp/test1004.txt ->  설정한 시간에 touch 명령실행(파일생성)
+12 18 * * * touch /tmp/test1004.txt
