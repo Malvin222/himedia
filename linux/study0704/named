@@ -1,0 +1,25 @@
+1.환경설정 변경
+vi / etc/named.conf
+
+2.yahoo.zone 이라는 영역파일 생성
+cd /var/named
+cp named.localhost yahoo.zone
+vi yahoo.zone
+
+3. zone 파일 소유권 설정
+chown root.named /var/named/yahoo.zone
+
+4. 호스트 파일에서 필요없는 내용 삭제 
+vi /etc/hosts
+
+5. 내가 사용하는 네임서버 주소를 바꿈
+vi /etc/resolv.conf
+
+6. zone 파일 소유권 설정
+chown root.named /var/named/yahoo.zone
+
+{서버재가동}
+service named restart
+
+{확인}
+ping yahoo.com
