@@ -10,8 +10,12 @@
 [서버관리자]
 1. 계정생성 - useradd/passwd
   -html
-  - n 
+  -m
+  -backup
+  폴더
 2.ftp가동/ssh가동
+service vsftpd restart
+service sshd restart
 --------------------------------------------
 ============================================
 useradd yahoo
