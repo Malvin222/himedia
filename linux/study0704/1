@@ -18,3 +18,7 @@ useradd yahoo
 passwd yahoo
 cd /home
 ls -> yahoo
+chown yahoo.yahoo html
+chown yahoo.yahoo m
+chown yahoo.yahoo backup
+chown yahoo.yahoo *
