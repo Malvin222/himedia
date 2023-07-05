@@ -17,4 +17,27 @@ mkdir backup
 ls -l
 {필요 디렉토리 소유주 변경}
 chown naver.naver *
+{naver 허가권 변경}
+cd /home
+ll
+chmod 711 naver
+{ ssh 서버 활성화}
+service sshd restart
+{FTP 서버 활성화}
+service vsftpd restart
+
+{name 서버 설정}
+vi /etc/named.conf
+zone "naver.com" {
+      type master;
+      file "naver.zone";
+};      ->naver.com의 zone영역설정
+
+cp named.localhost naver.zone
+vi naver.zone
+IN SOA @ naver.com.
+A :myIP 192.168.79.129
+chown root.named naver.zone
+{name서버 가동}
+service named restart
 ------------------------------------------------------
