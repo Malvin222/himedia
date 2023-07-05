@@ -1,0 +1,30 @@
+1. 방화벽
+firewall-cmd --permanent --ad-service=http
+firewall-cmd --permanent --ad-service=https
+firewall-cmd --reload
+
+vi /etc/selinux/config
+SELinux=diable ->수정
+
+2.웹서버 프로그램 설치
+yum -y install httpd*
+rpm -qa|grep httpd
+
+3.환경설정파일 -httpd.conf
+cd /etc/httpd/conf
+vi httpd.conf
+<Directory />
+  AllowOverride none
+  #Require all denied(주석처리)
+  Require all granted
+</Directory>
+4.환경설정파일 - vHost.conf
+vi /etc/httpd/conf.d/vHost.conf
+NameVirtualHost *:80
+<VirtualHost *:80>
+  ServerName naver.com
+  ServerAlia www.naver.com
+  DocumentRoot /home/naver.html
+</VirtualHost>
+5.서버 가동
+service httpd restart
