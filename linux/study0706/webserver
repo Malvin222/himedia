@@ -37,8 +37,13 @@ cd /var/named
 cp named.localhost naver.zone
 vi naver.zone
 IN SOA @ naver.com.
+
+vi /var/named/mycar.zone
 A :myIP 192.168.79.129
 chown root.named naver.zone
 {name서버 가동}
 service named restart
 ------------------------------------------------------
+vi /etc/named.conf
+vi /var/named/mycar.zone
+vi /etc/resolv.conf
