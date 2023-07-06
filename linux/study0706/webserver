@@ -33,6 +33,7 @@ zone "naver.com" {
       file "naver.zone";
 };      ->naver.com의 zone영역설정
 
+cd /var/named
 cp named.localhost naver.zone
 vi naver.zone
 IN SOA @ naver.com.
