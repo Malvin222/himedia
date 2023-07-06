@@ -23,6 +23,14 @@ vi /etc/httpd/conf.d/vHost.conf
 NameVirtualHost *:80
 <VirtualHost *:80>
   ServerName naver.com
+
+======================================
+vi /etc/named.conf
+vi /var/named/mycar.zone
+vi /etc/resolv.conf
+cd /etc/httpd/conf
+vi httpd.conf
+vi /etc/httpd/conf.d/vHost.conf
   ServerAlia www.naver.com
   DocumentRoot /home/naver.html
 </VirtualHost>
