@@ -1,0 +1,14 @@
+
+-eGOVframe-
+1. perspective -egov 실행
+2. window -preferences - Runtime Env - Apache ADD
+3. Servers - 톰캣 및 서버추가 
+4.  porm.xml 148줄 추가
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-war-plugin</artifactId>
+              <version>3.3.2</version>
+            </plugin>
+            
+5. 프로젝트명 -> run as ->run configurations -> common -> Encoding-> MS949
+6. http://localhost:(포트넘버 8080)/(프로젝트명)/egovSampleList.do 실행
