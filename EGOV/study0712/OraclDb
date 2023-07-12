@@ -1,0 +1,17 @@
+1. lib -> ojbdc6.jar 추가
+2. project -> build path -> Add jARs
+3.pom.xml 
+<!-- <dependencies> 라는 태그의 하위에 아래의 내용을 추가. -->
+<dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.3</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ojdbc6.jar</systemPath>
+</dependency>
+
+<dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-dbcp2</artifactId>
+      <version>2.8.0</version>
+</dependency>
