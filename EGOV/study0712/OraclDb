@@ -1,7 +1,56 @@
 1. lib -> ojbdc6.jar 추가
 2. project -> build path -> Add jARs
 3.pom.xml 
-<!-- <dependencies> 라는 태그의 하위에 아래의 내용을 추가. -->
+<!-- mysql이나 oracle DB 사용시 아래 설정 추가  
+        <dependency>
+	<groupId>org.apache.commons</groupId>
+	<artifactId>commons-dbcp2</artifactId>
+	<version>2.4.0</version>
+            </dependency>
+
+        <dependency>
+            <groupId>ojdbc</groupId>
+            <artifactId>ojdbc</artifactId>
+            <version>14</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ojdbc-14.jar</systemPath>
+        </dependency>
+        -->
+이부분 복사해서 
+<!-- 표준프레임워크 실행환경 -->
+밑에 붙여넣기
+
+ src/main/resources > egovframework > spring > context-datasource.xml
+
+♣ 스프링 구조에서 오라클 연결은 어찌할까?
+
+ 
+
+     -  스프링 프레임워크의 데이터베이스 연결은 Oracle (or) MySql 공통으로 다음과 같은 순으로 진행을 한다.
+
+     1. 드라이버 설정
+
+           - pom.xml 파일의 설정을 통해 드라이버를 자동 다운로드 받는다.
+
+     2. 접속정보 작성
+
+           - context-datasource.xml 파일의 설정을 통해 접속 정보를 설정한다.
+
+ 
+
+{ pom.xml }
+
+- 스프링 구조가 돌아갈 수 있게 온갖 설정이 세팅되어 있는 파일로 오라클 DB를 사용하기 위해서는 
+
+  여기에 반드시 아래의 내용을 추가한다.
+
+ 
+
+
+ 
+
+<!-- <dependencies> 라는 태그의 하위에 아래의 내용을 추가한다. -->
+
 <dependency>
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc6</artifactId>
@@ -15,3 +64,49 @@
       <artifactId>commons-dbcp2</artifactId>
       <version>2.8.0</version>
 </dependency>
+
+ 
+
+{ 적용 }
+
+   -  원래 자동임 ,   pox.xml 파일은 설정 추가 후 [저장]을 하게 되면 자동으로 드라이버가 다운로드 된다.
+
+   -  만약 드라이버가 자동으로 생성이 되지 않는 경우 아래의 내용을 실행 한다.
+
+           { 메유 } 프로젝트의 오른쪽 마우스 클릭  →  Maven  >  Update Project  (를) 선택하여 팝업창이 뜨면  {실행 버튼}을 클릭
+
+ 
+
+{ 확인 }
+
+    - 프로젝트 아래의 구성 중 Maven Dependencies 항목을 열어 다음 3가지가 추가 되었는지 확인한다.
+
+      (1) ojdbc6.jar
+
+      (2) commons-dbcp2-2.8.0.jar
+
+      (3) commons-pool2-2.8.1.jar
+
+ 
+
+ 
+
+ 
+
+** 저장 후 드라이버를 다시 확인해 본다.
+
+ 
+
+{ context-datasource.xml }
+
+ 
+
+- 프로젝트 아래의 구성에서 아래의 경로로 들어가 오픈.
+    src/main/resources > egovframework > spring > context-datasource.xml
+- 주석을 풀고 아래의 내용과 같이 설정.
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+          <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+          <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
+          <property name="username" value="c##java"/>
+          <property name="password" value="1234"/>
+    </bean>
