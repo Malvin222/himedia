@@ -1,0 +1,11 @@
+{프로그램 목록}
+{화면파일 목록}
+1. dept/deptWrite.jsp
+{자바파일 목록}
+1. DeptController.jsp     -- 웹 주소 매핑 파일
+2. DeptVO.java            -- DB로 전송하는 변수 세팅
+3. DeptService.java       --interface (DB연동관련 메소드의 명세화)
+4. DeptServiceImpl.java   --명세처리된 목록을 구현하는 파일
+5. DeptDAO.java           --SQL.xml과 연결되는 파일
+6. DeptSqlMap.xml         --SQL 등록파일
+7. sql-map-config.xml     --SQL.xml 파일 생성 시 등록되는 곳
