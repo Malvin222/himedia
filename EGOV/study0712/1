@@ -12,3 +12,13 @@
             
 5. 프로젝트명 -> run as ->run configurations -> common -> Encoding-> MS949
 6. http://localhost(도메인대용):(포트넘버 8080)/(프로젝트명)/egovSampleList.do 실행
+
+
+test1.jsp-> test1.do @@ http://localhost:8080/mywork1/test1.do
+Controller.java 파일
+@RequestMapping(value = "/test1.do")
+public String test1() {
+return "sample/test1";
+	}
+
+http://localhost:8080/mywork1/test1.do
