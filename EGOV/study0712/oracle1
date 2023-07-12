@@ -1,0 +1,23 @@
+(1) service -{interface}
+List<?> selectDeptList() throws Exception;
+(2) service.Impl - interface 파일을 상속 받아 구현시키는 파일
+@Override
+public List<?> selectDeptList() throws Exception {
+	return  sampleDAO.selectDeptList();
+	}
+(3) DAO - SQLMAP
+public List<?> selectDeptList() {
+		return list("sampleDAO.selectDeptList");
+	}
+(4) sqlMap ->Sample_SQL.xml
+	<select id="sampleDAO.selectDeptList" resultClass="egovMap">
+			SELECT DEPTNO,DNAME,LOC FROM DEPT;
+	</select>
+(5) Controller.java
+@RequestMapping(value = "/test1.do")
+	public String test1() throws Exception {
+			List<?> list = sampleService.selectDeptList();
+			System.out.println("list : " + list);
+		
+		return "sample/test1";
+}
