@@ -1,0 +1,20 @@
+[프로그램목록]
+  1.등록화면 -/cmsWrite.do
+  2.등록처리 -/cmsWriteSave.do
+  3.목록화면 -/cmsList.do
+  4.수정화면 -/cmsModify.do
+  5.수정처리 -/dmsModifySave.do
+  6.삭제처리 -/cmsDelete.do
+[화면목록]
+  1.cmsWrite.jsp
+  2.cmsList.jsp
+  3.cmsModify.jsp
+[서비스파일목록]
+ 1.CmsVO.java
+ 2.CmsController.java
+ 3.CmsService.java
+ 4.CmsServiceImpl.java
+ 5.CmsDAO.java
+[SQL목록]
+ 1.CmsSQL.xml
+ 2.sql-map-config.xml (sqlmap 등록)
