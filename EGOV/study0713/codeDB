@@ -18,3 +18,5 @@
 [SQL목록]
  1.CmsSQL.xml
  2.sql-map-config.xml (sqlmap 등록)
+
+http://localhost:8080/mywork1/cmsWrite.do
