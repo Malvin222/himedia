@@ -3,6 +3,7 @@
 (1) JSP파일 작업 홈 디렉토리 변경 : WEB-INF/jsp/egovframework/example/ ->  p:prefix="/" p:suffix=".jsp"/>
 
 (2) 작업패키지 추가 등록
+dispatcher-servlet.xml, context-common.xml
 >>egovframework.example.sample.web
 10번라인 -> <context:component-scan base-package="egovframework,egov">
 egov.mywork1.service
