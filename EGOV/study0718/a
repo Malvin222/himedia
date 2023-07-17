@@ -9,3 +9,6 @@ dispatcher-servlet.xml, context-common.xml
 egov.mywork1.service
 egov.mywork1.service.impl
 egov.mywork1.web
+
+(웹주소에서 프로젝트명 제거)
+server - module edit /mywork1 - > /
