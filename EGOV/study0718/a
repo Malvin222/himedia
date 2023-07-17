@@ -14,7 +14,8 @@ egov.mywork1.web
 server - module edit /mywork1 - > "/"
 
 --------------------------------
-{게시판}
+[게시판]
+{프로그램 목록}
 1.boardWrite.do
 2.boardWriteSave.do
 3.boardList.do
