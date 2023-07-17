@@ -24,3 +24,6 @@ server - module edit /mywork1 - > "/"
 6.boardModifySave.do
 7.boardPass.do
 8.boardDelete.do
+
+{화면 목록}
+1.boardWrite.jsp
