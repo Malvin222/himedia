@@ -1,0 +1,10 @@
+컨트롤 쉬프트 R
+1. dispatcher-servlet.xml
+(1) JSP파일 작업 홈 디렉토리 변경 : WEB-INF/jsp/egovframework/example/ ->  p:prefix="/" p:suffix=".jsp"/>
+
+(2) 작업패키지 추가 등록
+>>egovframework.example.sample.web
+10번라인 -> <context:component-scan base-package="egovframework,egov">
+egov.mywork1.service
+egov.mywork1.service.impl
+egov.mywork1.web
