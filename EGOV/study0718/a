@@ -15,6 +15,15 @@ server - module edit /mywork1 - > "/"
 
 --------------------------------
 [게시판]
+egov.mywork1.web
+(1) BoardController.java
+egov.mywork1.service
+(2) BoardVO.java
+(3) BoardService.java - interface
+egov.mywork1.service.impl
+(4) BoardServiceImpl.java
+(5) BoardDAO.java
+
 {프로그램 목록}
 1.boardWrite.do
 2.boardWriteSave.do
@@ -28,5 +37,6 @@ server - module edit /mywork1 - > "/"
 {화면 목록}
 1.boardWrite.jsp
 
+>>BoardSQL.xml
 
 jqueryui.com
