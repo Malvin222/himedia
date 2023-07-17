@@ -1,6 +1,6 @@
 컨트롤 쉬프트 R
 1. dispatcher-servlet.xml
-(1) JSP파일 작업 홈 디렉토리 변경 : p:prefix="W/EB-INF/jsp/egovframework/example/" ->  p:prefix="/" p:suffix=".jsp"/>
+(1) JSP파일 작업 홈 디렉토리 변경 : p:prefix="/WEB-INF/jsp/egovframework/example/" ->  p:prefix="/" p:suffix=".jsp"/>
 
 (2) 작업패키지 추가 등록
 dispatcher-servlet.xml, context-common.xml
