@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="CmsSpace">
+
+	<typeAlias  alias="egovMap" type="org.egovframe.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="searchVO" type="egovframework.example.sample.service.SampleDefaultVO"/>
+	<typeAlias  alias="cmsVO" type="egovframework.example.sample.service.CmsVO"/>
+
+	<insert id="cmsDAO.insertCms">
+		INSERT INTO CMS(cms_no
+						,cms_nm
+						,cms_yn) 
+					VALUES( (SELECT NVL(MAX(cms_no),#code_gubun#||'00')+1
+									from cms
+								  where cms_no like #code_gubun#||'%' )
+					,#cms_nm#
+					,#cms_yn#)
+	</insert>
+	
+	<select id="cmsDAO.selectCmsList" resultClass="egovMap">
+		SELECT cms_no
+			 , cms_nm
+			 , decode(CMS_YN,'Y','사용','미사용') cms_yn 
+			 FROM
+			   CMS
+			 ORDER BY cms_no DESC
+	</select>
+	
+	
+	<delete id="cmsDAO.deleteCms">
+		DELETE FROM CMS WHERE CMS_NO = #cms_no#
+	</delete>
+	
+	<select id="cmsDAO.selectCmsDetail" resultClass="cmsVO">
+		SELECT CMS_NO,CMS_NM,CMS_YN FROM CMS
+					 WHERE CMS_NO=#cms_no#
+	</select>
+	<update id="cmsDAO.updateCms">
+		UPDATE CMS SET CMS_NM=#cms_nm#, CMS_YN=#cms_yn#
+			WHERE CMS_NO=#cms_no#
+	</update>
+</sqlMap>
