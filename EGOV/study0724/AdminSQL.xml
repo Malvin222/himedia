@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AdminSpace">
+
+	<typeAlias  alias="egovMap"   type="org.egovframe.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="defaultVO" type="egov.mywork1.service.DefaultVO"/>
+	<typeAlias  alias="noticeVO"  type="egov.mywork1.service.NoticeVO"/>
+	
+	<insert id="adminDAO.insertNotice">
+		INSERT INTO NOTICEBOARD(UNQ
+						  ,TITLE		<!-- 제목 -->
+						  ,PASS			<!-- 암호 -->
+						  ,NAME			<!-- 이름 -->
+						  ,CONTENT		<!-- 내용 -->
+						  ,RDATE		<!-- 날짜 -->
+						  ,EMPS			<!-- 강조 -->
+						  ) 
+					VALUES( NOTICEBOARD_SEQ.NEXTVAL
+						   ,#title#
+						   ,#pass#
+						   ,#name#
+						   ,#content#
+						   ,SYSDATE
+						   ,#emps# )
+	</insert>
+	<select id="adminDAO.selectAdminNoticeList" resultClass="egovMap">
+<!-- 	SELECT UNQ
+		  ,TITLE
+		  ,NAME
+		  ,CONTENT
+		  ,TO_CHAR(RDATE,'yyyy-MM-dd') RDATE
+		  ,HITS
+		FROM NOTICEBOARD
+			ORDER BY unq DESC -->
+      select d.*  from (
+      select rownum rn,c.* from (
+         select a.* from(                    
+            select unq
+                 ,title
+                 ,name
+                 ,hits
+                 ,emps
+                 ,to_char(rdate,'yyyy-mm-dd') rdate from NOTICEBOARD where emps = 'Y' order by unq desc ) a
+         union all
+         select b.* from(
+            select unq
+                 ,title
+                 ,name
+                 ,hits
+                 ,emps
+                 ,to_char(rdate,'yyyy-mm-dd') rdate from NOTICEBOARD where emps = 'N' order by unq desc ) b ) c
+               WHERE 
+                  1=1
+               <isNotNull property="searchCondition">
+                  <isNotEmpty property="searchCondition">
+                     AND $searchCondition$ LIKE '%$searchKeyword$%'
+                  </isNotEmpty>
+               </isNotNull>   
+               ) d
+         WHERE
+            rn BETWEEN $firstIndex$ AND $lastIndex$
+
+	</select>
+	<select id="adminDAO.selectNoticeTotal" resultClass="int">
+         SELECT COUNT(*) TOTAL FROM NOTICEBOARD
+            WHERE 1=1 
+               <isNotNull property="searchCondition">
+                     <isNotEmpty property="searchCondition">
+                        AND $searchCondition$ LIKE '%'||#searchKeyword#||'%'
+                     </isNotEmpty>
+               </isNotNull>
+
+	</select>
+	
+	<select id="adminDAO.selectNoticeDetail" resultClass="noticeVO">
+		SELECT TITLE
+			   ,CONTENT
+			   ,NAME
+			   ,TO_CHAR(RDATE,'yyyy-mm-dd') RDATE
+			   ,EMPS
+			   ,HITS
+		 FROM NOTICEBOARD
+				 WHERE UNQ = #unq#
+	</select>
+</sqlMap>
