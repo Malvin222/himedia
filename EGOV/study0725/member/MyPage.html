@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="nav.css">
+    <style>
+        body{
+            font-size: 0.75em;
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+        textarea , h1,h2,h3{
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 1em;
+            padding: 0;
+        }
+        p{
+            margin: 0;
+            padding: 0;
+            word-break: break-all;
+        }
+        #container {
+            position: relative;
+            min-height: 500px;
+            height: auto !important;
+            background: #fff;
+            zoom: 1;
+        }
+        #wrapper{
+            z-index: 5;
+            margin: 20px auto;
+            width: 1000px;
+            zoom: 1;
+            position: relative;
+        }
+        footer {
+            clear: both;
+            padding: 0 0 10px;
+            min-width: 1000px;
+            border-top: 1px solid #dde3e6;
+            background: #f8f8f8;
+        }
+        #formselect {
+            width:200px;
+            font-family:돋움; 
+            font-style:normal; 
+            color:#4C4D4B; 
+            text-align:center; 
+            background-color:#ffffff;
+        }
+        footer div {
+            position: relative;
+            margin: 0 auto;
+            width: 1000px;
+            text-align: center;
+        }
+        footer ul {
+            margin: 0 0;
+            text-align: center;
+            padding: 15px 0 15px;
+            border-bottom: 1px solid #dde3e6;
+            zoom: 1;
+        }
+        footer li {
+            display: inline-block;
+            margin: 0 20px 0 0;
+            font-size: 1.167em;
+            font-weight: bold;
+            zoom: 1;
+            *display: inline;
+        }
+        footer a {
+            text-decoration: none;
+        }
+        footer p {
+            margin: 0;
+            padding: 10px 0;
+            line-height: 1.8em;
+            border-top: 1px solid #fff;
+            color: #555;
+        }
+        footer span {
+            display: inline-block;
+            margin: 0 15px 0 0;
+        }
+        footer b {
+            display: inline-block;
+            margin: 0 5px 0 0;
+        }
+        .btn01{
+            display: inline-block;
+            padding: 7px;
+            text-decoration: none;
+            border: 1px solid #86bf62;
+            background: #fff;
+            color: #86bf62;
+            vertical-align: middle;
+        }
+        .btn02{
+            display: inline-block;
+            padding: 7px;
+            text-decoration: none;
+            border: 1px solid #86bf62;
+            background: #86bf62;
+            color: #fff;
+            vertical-align: middle;
+        }
+        table ,tr{
+            border-collapse: collapse;
+            border: 1px solid #e9e9e9;
+        
+            zoom: 1;
+        }
+        .td1{
+            width: 100px;
+            font-weight: bold;
+            padding: 7px 10px;
+            float: left;
+        }
+        .td2{
+            width: 359px;
+            padding: 7px 10px;
+            margin: 0;
+            float: left;
+        }
+        th{
+            padding: 12px 0;
+            border-bottom: 1px solid #d3d3d3;
+            color: #383838;
+            font-size: 0.95em;
+            text-align: center;
+            border-top: 2px solid #000;
+            background: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div id= "hd" style="z-index: 1000; margin: 0 auto;">
+            <div style="width: 100%; background-color: #f9f9f9; border-bottom: #ddd 1px solid;">
+                <div style="width: 1000px; margin:0 auto; height: 35px; line-height: 35px;">
+                    <ul style="float: left;">
+                        <li class="li_style"><a class="li_left_style" href ="../main/main.html"> HOME </a></li>
+                        <li class="li_style"><a class="li_left_style" href="">즐겨찾기 </a></li>
+                    </ul>
+
+                    <ul style='float:right;'>
+                        <li class="li_style"><a class="a_li_style" href="registerToS.html">회원가입</a></li>
+                        <li class="li_style"><a class="a_li_style" href="login.html"><b>로그인</b></a></li>
+                        <li class="li_style"><a class="a_li_style" href="MyPage.html">마이페이지</a></li>
+                        <li class="li_style"><a class="a_li_style" href="">예약조회</a></li>
+                        <li class="li_style"><a class="a_li_style" href="">공지사항</a></li>
+                        <li class="li_style"><a class="a_li_style" href=""><b>예약상담</b></a></li>
+                        <li class="li_style"><a class="a_li_style" href=""><b>이용후기</b></a></li>
+                        <li class="li_style"><a class="a_li_style3" href="">개인결제</a></li>   
+                    </ul>
+                </div>
+            </div>
+
+            <div id="hd_wrapper">
+                <div style="width: 100%; height: 80px;">
+
+                    <div id="hd_wrapper_call_div">
+                        <img src="src/call_center.jpg" alt="고객센터 : 012-345-6789">
+                    </div>
+
+                    <div id="hd_wrapper_main_title">
+                        <a href="index.html"> <img src="src/logo_img.jpg" alt="제주렌트카"> </a>
+                    </div>
+
+                    <div id="hd_wrapper_kakao">
+                        <img src="src/yellowid.png" alt="카카오톡">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="rentlist_left" >
+                <div id="rentlist_right">
+                    <nav id="gnb">
+                        <h2>쇼핑몰 카테고리</h2>
+
+                        <ul id="gnb_1dul" >
+                            <li class="gnb_1dli">
+                                <a href="" class="gnb_2da"> <font color = #FFF000>★ 전체차량 리스트 ☆</font></a>
+                            </li>
+                            <li class="gnb_1dli" style="z-index:998">
+                                <a href="" class="gnb_1da">경.소형차량</a>
+                            </li>
+                            <li class="gnb_1dli" style="z-index:997">
+                                <a href="" class="gnb_1da">중형차량</a>
+                            </li>
+                            <li class="gnb_1dli" style="z-index:996">
+                                <a href="" class="gnb_1da">고급차량</a>
+                            </li>
+                            <li class="gnb_1dli" style="z-index:995">
+                                <a href="" class="gnb_1da">SUV / RV</a>
+                            </li>
+                            <li class="gnb_1dli" style="z-index:994">
+                                <a href="" class="gnb_1da">승합차량</a>
+                            </li>
+                            <li class="gnb_1dli" style="z-index:993">
+                                <a href="" class="gnb_1da">외제차량</a>
+                            </li>
+                        </ul>
+
+                        <ul class="gnb_co">
+                            <li class="bg_no"><b><font color='#ffff00'><a href="" class="gnb_2da">기사전용차량</a></font></b></li>
+                            <li><a href="">실시간항공권</a></li>
+                            <li><a href="">관광지할인쿠폰</a></li>
+                        </ul>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="wrapper">
+        <div>
+            <div style="margin-bottom: 15px; font-size: 1.3em; font-weight: bold;">
+                이보민님 마이페이지
+            </div>
+            <section style="margin: 0 0 20px;">
+                <div style="margin: 0 0 10px; position: absolute; top: -10px; right: 0; zoom: 1;">
+                    <ul style="float: right; margin: 0; padding: 0; list-style: none;">
+                        <li style="float: left; margin: 0 0 0 5px;">
+                            <a href="MyNoteBox_Get.html" target="_blank" class="btn01" style="color: #86bf62;">쪽지함</a>
+                        </li>
+                        <li style="float: left; margin: 0 0 0 5px;">
+                            <a href="" target="_blank" class="btn01">회원정보수정</a>
+                        </li>
+                        <li style="float: left; margin: 0 0 0 5px;">
+                            <a href="" target="_blank" class="btn02">회원탈퇴</a>
+                        </li>
+                    </ul>
+                </div>
+                <table style="background: #f3f5ee;">
+                    <tr>
+                        <td class="td1">보유포인트</td>
+                        <td class="td2">1,000점</td>
+                        <td class="td1">보유쿠폰</td>
+                        <td class="td2">1</td>
+                    </tr>
+                    <tr>
+                        <td class="td1">연락처</td>
+                        <td class="td2">미등록</td>
+                        <td class="td1">E-Mail</td>
+                        <td class="td2">abcde@revan.moc</td>
+                    </tr>
+                    <tr>
+                        <td class="td1">최종접속일시</td>
+                        <td class="td2">2021-10-08 15:17:42</td>
+                        <td class="td1">회원가입일시</td>
+                        <td class="td2">2021-10-08 15:17:42</td>
+                    </tr>
+                    <tr>
+                        <td class="td1">주소</td>
+                        <td class="td2">()</td>
+                        <td class="td1"></td>
+                        <td class="td2"></td>
+                    </tr>
+                </table>
+
+            </section>
+            
+            <section style="margin: 0 0 20px;">
+                <h2 style="margin: 0 0 10px; font-size: 1em; padding: 0;">최근 예약내역</h2>
+                <div style="margin: 0 0 10px;">
+                    <table style="width: 100%; border-collapse: collapse; border-spacing: 0;">
+                        <thead>
+                            <tr>
+                                <th>예약번호</th>
+                                <th>예약일시</th>
+                                <th>상품수</th>
+                                <th>예약금액</th>
+                                <th>입금액</th>
+                                <th>미입금액</th>
+                                <th>상태</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="7" 
+                                style="border-top: 1px solid #eee; 
+                                border-bottom: 1px solid #eee; 
+                                line-height: 1.5em; word-break: break-all; padding: 50px 0 !important;
+                                text-align: center;">
+                                    예약 내역이 없습니다.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div style="text-align: right;">
+                    <a href="" class="btn01">예약내역 더보기</a>
+                </div>
+
+            </section>
+
+            
+            <section style="margin: 0 0 20px;">
+                <h2 style="margin: 0 0 10px; font-size: 1em; padding: 0;">최근 위시리스트</h2>
+                <div style="margin: 0 0 10px;">
+                    <table style="width: 100%; border-collapse: collapse; border-spacing: 0;">
+                        <thead>
+                            <tr>
+                                <th>이미지</th>
+                                <th>상품명</th>
+                                <th>상품수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="7" 
+                                style="border-top: 1px solid #eee; 
+                                border-bottom: 1px solid #eee; 
+                                line-height: 1.5em; word-break: break-all; padding: 50px 0 !important;
+                                text-align: center;">
+                                    보관 내역이 없습니다.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div style="text-align: right;">
+                    <a href="" class="btn01">위시리스트 더보기</a>
+                </div>
+
+            </section>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <ul>
+                <li><a href="">회사소개</a></li>
+                <li><a href="">전자상거래표준약관</a></li>
+                <li><a href="">개인정보 취급방침</a></li>
+                <li><a href="">국내여행표준약관</a></li>
+                <li>
+                    <select size="1" id="formselect" name="select4" class="top">
+                        <option selected>::::제휴사이트 링크::::</option>
+                        <option>-----------------------</option>
+                        <option value="">제주허브닷컴</option>
+                        <option value="">제주허브렌트카</option>
+                        <option value="">제주렌트카닷컴</option>
+                    </select></li>
+            </ul>
+            <p>
+                <span><b>회사명</b> 제주렌트카 (상호명:제주허브닷컴)</span>
+                <span><b>주소</b> 제주특별자치도 제주시 평전길13 (1층, 삼도1동)</span><br>
+                <span><b>사업자 등록번호</b> 616-27-75958</span>
+                <span><b>대표</b> 조영민</span>
+                <span><b>전화</b> 064-747-6606</span>
+                <span><b>팩스</b> 064-803-0843</span><br>
+                <span><b>통신판매업신고번호</b> 제2020-삼도1동-0032호</span>
+                <span><b>개인정보관리책임자</b> 조영민</span>
+                <span><b>부가통신사업신고번호</b> 제2011-46호</span><br>
+                <span class="copy">Copyright © 2016-2020 제주렌트카 (상호명:제주허브닷컴). All Rights Reserved.</span>
+            </p>
+        </div>
+
+    </footer>
+</body>
+</html>

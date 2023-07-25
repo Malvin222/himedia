@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <style>
+        body {
+            font-size: 0.75em;
+            padding: 0;
+            margin: 0;
+        }
+        label {
+            letter-spacing: -0.1em;
+            vertical-align: middle;
+            cursor: default;
+            letter-spacing: -0.1em;
+        }
+        input{
+            margin: 0;
+            padding: 0;
+            font-size: 1em;
+            vertical-align: middle;
+        }
+        .input_box {
+            padding: 0;
+            height: 22px;
+            border: 1px solid #e4eace;
+            color: #000;
+            line-height: 2em;
+            background: #f7f7f7;
+            display: block; 
+            margin: 0 0 5px 80px; 
+            width: 162px;
+        }
+        .btn_submit {
+            position: absolute;
+            top: 20px;
+            right: 95px;
+            width: 60px;
+            height: 53px;
+            border: 0;
+            border-radius: 5px;
+            padding: 13px 0;
+            font-size: 1.09em;
+            font-weight: bold;
+            letter-spacing: 0;
+            background-color: #86bf62;
+            color: #fff;
+            margin: 0;
+            vertical-align: middle;
+        }
+        aside{
+            margin: 0 0 30px;
+            padding: 20px;
+            border: 1px solid #cfded8;
+            background: #f5f6fa;
+            display: block;
+            
+        }
+        a.btn {
+            display: inline-block; padding: 7px; border: 1px solid #86bf62; background: #86bf62; color: #fff;
+                text-decoration: none; vertical-align: middle;
+        }
+        a.btn_register {
+            display: inline-block; padding: 7px; border: 1px solid #86bf62; background: #fff; color: #86bf62;
+                text-decoration: none; vertical-align: middle;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function open(){
+            var why = window.open('../member/SearchUser.html' ,'_blank');
+        }
+
+        function check(){
+            if(document.frm.id.value == ""){
+                alert("아이디를 입력해주세요");
+                document.frm.id.focus();
+                return false;
+            }
+            if(document.frm.pw.value == ""){
+                alert("패스워드를 입력해주세요");
+                document.frm.pw.focus();
+                return false;
+            }
+
+            alert("어서오세요 " + document.frm.id.value+" 님");
+            
+            location = "MyPage.html";
+        }
+    </script>
+
+</head>
+<body>
+    <div style="margin:  0 auto; padding: 100px 0; width: 500px;">
+        <h1 style="font-size: 1.3em; margin: 0 0 20px;">로그인</h1>
+        <form style="margin: 0; padding: 0; border: 0;" name="frm">
+            <fieldset style="position: relative; margin: 0; padding: 20px 20px 20px 95px; border: 1px solid #cfded8; border-bottom: 0; background: #fff;">
+                <label style=" position: absolute; top: 26px; left: 95px;">회원아이디</label>
+                <input type="text" name="id" id="login_id" class="input_box" required="" minlength="3" autofocus>
+                <label style="position: absolute; top: 52px; left: 95px; ">비밀번호</label>
+                <input type="text" name="pw" id="login_pw" class="input_box" required="" minlength="3">
+                <input type="submit" class="btn_submit" value="로그인" onclick="check(); return false;" style="cursor: pointer;">
+                <input type="checkbox" name="auto_login" id="login_auto">
+                <label for="login_auto">자동로그인</label>
+            </fieldset>
+            <aside id="login_info">
+                <h2 style="font-size: 1em; margin: 0; padding: 0; border: 0;">회원로그인 안내</h2>
+                <p>회원아이디 및 비밀번호가 기억 안나실 때는 아이디/비밀번호 찾기를 이용하십시오.<br>
+                    아직 회원이 아니시라면 회원으로 가입 후 이용해 주십시오.
+                </p>
+                <div style="text-align: right;" >
+                    <a href="SearchUser.html" target="_blank" class="btn" id="Window" onclick="why();" >아이디 비밀번호 찾기</a>
+                    <a href="register.html" class="btn_register">회원 가입</a>
+                </div>
+            </aside>
+        </form>
+        <div style="text-align: center ;">
+            <a href="../main/main.html" style="color: #000; text-decoration: none;">메인으로 돌아가기</a>
+        </div>
+    </div>
+</body>
+</html>

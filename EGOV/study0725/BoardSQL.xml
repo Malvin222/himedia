@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="BoardSpace">
+
+	<typeAlias  alias="egovMap" type="org.egovframe.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="searchVO" type="egovframework.example.sample.service.SampleDefaultVO"/>
+	<typeAlias  alias="boardVO" type="egov.mywork1.service.BoardVO"/>
+	<typeAlias  alias="noticeVO" type="egov.mywork1.service.NoticeVO"/>
+	
+	<insert id="boardDAO.insertBoard">
+		INSERT INTO BOARD1(UNQ
+						  ,TITLE		<!-- 제목 -->
+						  ,PASS			<!-- 암호 -->
+						  ,NAME			<!-- 이름 -->
+						  ,CONTENT		<!-- 내용 -->
+						  ,RDATE
+						  ,UDATE		<!-- 날짜 -->
+						  ) 
+					VALUES( BOARD1_SEQ.NEXTVAL
+						   ,#title#
+						   ,#pass#
+						   ,#name#
+						   ,#content#
+						   ,SYSDATE
+						   ,SYSDATE )
+	</insert>
+	<select id="boardDAO.selectBoardList" resultClass="egovMap">
+		SELECT b.* FROM(
+			SELECT rownum rn, a.* FROM(
+				SELECT UNQ
+					  ,TITLE
+					  ,NAME
+					  ,HITS
+					  ,TO_CHAR(RDATE,'yyyy-MM-dd') RDATE
+					  ,UDATE
+					FROM
+						BOARD1
+					ORDER BY unq DESC) a ) b
+				WHERE
+					rn BETWEEN $firstIndex$ AND $lastIndex$ 
+	</select>
+	
+	<select id="boardDAO.selectBoardTotal" resultClass="int">
+		SELECT COUNT(*) TOTAL FROM BOARD1
+	</select>
+	
+	<select id="boardDAO.selectNoticeList" resultClass="egovMap">
+
+	SELECT b2.* FROM (
+	     SELECT rownum rn, a2.* FROM ( 
+				SELECT c.* from  (
+					SELECT  a.*  from (
+				        SELECT  unq
+				        		,title
+				        		,name
+				        		,hits
+				        		,to_char(rdate,'yyyy-mm-dd') rdate
+				                ,emps 
+				         FROM  noticeboard 
+				         WHERE emps='Y' 
+						       ORDER BY unq DESC ) a
+				    
+				    UNION ALL 
+				    
+				    SELECT  b.*  from (
+				        SELECT  unq
+				        		,title
+				        		,name
+				        		,hits
+				        		,to_char(rdate,'yyyy-mm-dd') rdate
+				                ,emps  
+				           FROM noticeboard 
+				          WHERE emps='N'
+				      			ORDER BY unq DESC ) b
+				 	) c  
+
+				  WHERE  1=1
+				  
+				  <isNotNull property="searchCondition">
+				  	<isNotEmpty property="searchCondition">
+				    	AND $searchCondition$ LIKE '%$searchKeyword$%'
+			      	</isNotEmpty>
+			      </isNotNull>
+				 
+				  ) a2 ) b2
+				  
+	WHERE 	
+		  rn  BETWEEN  $firstIndex$  AND  $lastIndex$ 
+	</select>
+		<select id="boardDAO.selectNoticeTotal" resultClass="int">
+         SELECT COUNT(*) TOTAL FROM NOTICEBOARD
+            WHERE 1=1 
+               <isNotNull property="searchCondition">
+                     <isNotEmpty property="searchCondition">
+                        AND $searchCondition$ LIKE '%'||#searchKeyword#||'%'
+                     </isNotEmpty>
+               </isNotNull>
+
+	</select>
+	
+	<select id="boardDAO.selectNoticeDetail" resultClass="noticeVO">
+			SELECT TITLE
+			   ,CONTENT
+			   ,NAME
+			   ,TO_CHAR(RDATE,'yyyy-mm-dd') RDATE
+			   ,EMPS
+			   ,HITS
+		 FROM NOTICEBOARD
+				 WHERE UNQ = #unq#
+	
+	</select>
+
+</sqlMap>

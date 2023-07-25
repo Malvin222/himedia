@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        body{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 0.75em;
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+        h1,h2,h3{    
+            font-size: 1em;
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+        ul,li{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        #h1_view{
+            margin: 0 0 20px;
+            padding: 20px;
+            border-top: 3px solid #4e5d60;
+            border-bottom: 1px solid #e9e9e9;
+            background: #fff;
+            font-size: 1.2em;
+        }
+        ul {
+            margin:  -20px 0 20px 0;
+            padding: 0 20px;
+            border-bottom: 1px solid #455255;
+            background: #484848;
+            list-style: none;
+            zoom: 1;
+        }
+        ul::after{
+            display: block;
+            visibility: hidden;
+            clear: both;
+            content: "";
+        }
+        li{
+            float: left;
+            margin-left: -1px;  
+        }
+        a {
+            display: block;
+            padding: 10px 10px 8px;
+            border-right: 1px solid #455255; 
+            border-left: 1px solid #455255; 
+            color: #fff;
+            font-family: dotum;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        th{
+            width: 100px;
+            padding: 7px 13px;
+            border: 1px solid #e9e9e9;
+            border-left: 0;
+            background: #f7f7f7;
+            text-align: left;
+        }
+        td{
+            padding: 7px 10px;
+            border-top: 1px solid #e9e9e9;
+            border-bottom: 1px solid #e9e9e9;
+            background: transparent;
+        }
+        input{
+            border: 1px solid #e4eaec;
+            background: #f7f7f7;
+            color: #000;
+            vertical-align: middle;
+            line-height: 2em;
+        }
+        #btn01{
+            position: absolute;
+            top: 0;
+            left: 101px;
+            margin: 0;
+            padding: 0;
+            width: 23px;
+            height: 22px;
+            border: 0;
+            background: transparent;
+            vertical-align: middle;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        #btn02{
+            position: absolute;
+            top: 21px;
+            left: 101px;
+            margin: 0;
+            padding: 0;
+            width: 23px;
+            height: 22px;
+            border: 0;
+            background: transparent;
+            vertical-align: middle;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .btn_img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 23px;
+            height: 22px;
+        }
+        #auto_check{
+            margin: 0 0 0 25px;
+            padding: 0 5px;
+            width: 70px;
+            height: 41px;
+            border: 1px solid #b8c9c2;
+            background: #f7f7f7;
+            font-size: 1.333em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 2.8em;
+        }
+        
+        .btn_submit {
+            width: 120px;
+            border: 0;
+            border-radius: 5px;
+            padding: 13px 0;
+            font-size: 1.09em;
+            font-weight: bold;
+            letter-spacing: 0;
+            background-color: #86bf62;
+            color: #fff;
+            margin: 0;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        
+        button {
+            display: inline-block;
+            padding: 0 10px;
+            height: 30px;
+            border: 0;
+            background: #4b545e;
+            color: #fff;
+            line-height: 2em;
+            cursor: pointer;
+        }
+        textarea{
+            height: 100px;
+            width: 98%; 
+            padding: 2px 2px 3px; 
+            border:1px solid #e4eaec; 
+            color: #000; 
+            vertical-align: middle; 
+            line-height: 2em;
+        }
+    </style>
+    <script>
+        function check(){
+            if(document.frm.id.value == ""){
+                alert("받는 회원 아이디를 입력하세요.");
+                document.frm.id.focus();
+                return false;
+            }
+            if(document.frm.content.value == ""){
+                alert("내용을 입력하세요.");
+                document.frm.content.focus();
+                return false;
+            }
+            if(document.frm.auto.value == ""){
+                alert("자동등록방지를 입력하세요.");
+                document.frm.auto.focus();
+                return false;
+            }
+            alert("쪽지가 보내졌습니다.");
+	        document.frm.submit();
+        }
+        function close(){
+            window.open('', '_self', '');
+            window.close();
+            return false;
+            }
+    </script>
+
+</head>
+<body>
+    
+    <div>
+        <h1 id="h1_view">
+            쪽지 보내기
+        </h1>
+        <ul>
+            <li>
+                <a href="MyNoteBox_Get.html">받은 쪽지</a>
+            </li>
+            <li>
+                <a href="MyNoteBox_Get.html">보낸 쪽지</a>
+            </li>
+            <li>
+                <a href="MyNoteBox_Get.html">쪽지쓰기</a>
+            </li>
+        </ul>
+        <form name="frm">
+                
+            <div style="margin:0 20px;">
+                <table style="width: 100%; border-collapse: collapse; border-spacing: 0; border-top: 2px solid #000;">
+                    <caption style="padding: 10px 0; font-weight: bold; text-align: left;">쪽지쓰기</caption>
+                    <tbody>
+                        <tr>
+                            <th style="width: 85px;">
+                                <label style="vertical-align: middle; cursor: default;">받는 회원아이디</label>
+                            </th>
+                            <td>
+                                <input type="text" name="id" id="user_id" autofocus  >
+                                <span id="frm_info" 
+                                style="display: block; padding: 0 0 5px; line-height: 1.4em;">
+                                    여러 회원에게 보낼때는 컴마(,)로 구분하세요.</span>
+                            </td>
+                        </tr>
+                        <tr  style="width: 85px;">
+                            <th>
+                                <label>내용</label></th>
+                            <td>
+                                <textarea name="content"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>자동등록방지</th>
+                            <td>
+                                <fieldset style="display: inline-block; position: relative; margin: 0; border: 0; padding: 0;">
+                                    <img src="src/kcaptcha_image.jpg" style="width: 100px; height: 41px; border: 1px solid #e9e9e9; vertical-align: middle;">
+                                    <button id="btn01"><span class="btn_img" style="background: url('src/sound.gif');"></span></button>
+                                    <button id="btn02"><span class="btn_img" style="background: url('src/reload.gif');"></span></button>
+                                    <input type="text" id="auto_check" size="6" maxlength="6" name="auto" >
+                                    <span style="display: block; margin: 5px 0 0; font-size: 0.95em; letter-spacing: -0.1em;">자동등록방지 숫자를 순서대로 입력하세요.</span>
+                                </fieldset>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="clear: both; padding: 20px; text-align: center;">
+                <input type="submit" value="보내기"class="btn_submit" onclick="check(); return false;" style="padding: 0 10px; height: 30px; line-height: 2em;">
+                <button type="button" onclick="close();">창닫기</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
