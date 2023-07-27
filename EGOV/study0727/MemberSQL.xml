@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="MemberSpace">
+
+	<typeAlias  alias="egovMap" type="org.egovframe.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="searchVO" type="egovframework.example.sample.service.SampleDefaultVO"/>
+	<typeAlias  alias="memberVO" type="egov.mywork1.service.MemberVO"/>
+
+	<insert id="memberDAO.insertMember">
+		INSERT INTO MEMBERINFO (
+								USERID
+								,PASS
+								,NAME
+								,NICKNAME
+								,EMAIL
+								,PHONE
+								,MOBILE
+								,MAIL
+								,SMS
+								,RDATE
+								,UDATE) 
+									 VALUES(
+									 #userid#
+									,#pass#
+									,#name#
+									,#nickname#
+									,#email#
+									,#phone#
+									,#mobile#
+									,#mail#
+									,#sms#
+									,sysdate
+									,sysdate
+									)
+	</insert>
+	<select id="memberDAO.selectMemberUserId" resultClass="int">
+	SELECT count(*) FROM MEMBERINFO WHERE userid = #userid#
+	</select>
+	<select id ="memberDAO.selectMemberNickname" resultClass="int">
+	SELECT count(*) FROM MEMBERINFO WHERE nickname = #nickname#
+	</select>
+	<select id ="memberDAO.selectMemberLogin" resultClass="String">
+	select name from memberinfo where userid = #userid# and pass=#pass#
+	</select>
+</sqlMap>
