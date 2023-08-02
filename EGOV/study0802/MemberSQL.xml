@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="MemberSpace">
+
+	<typeAlias  alias="egovMap" type="org.egovframe.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="searchVO" type="egovframework.example.sample.service.SampleDefaultVO"/>
+	<typeAlias  alias="memberVO" type="egov.mywork1.service.MemberVO"/>
+
+	<insert id="memberDAO.insertMember">
+		INSERT INTO MEMBERINFO (
+								USERID
+								,PASS
+								,NAME
+								,NICKNAME
+								,EMAIL
+								,PHONE
+								,mobile
+									) 
+									 VALUES(
+									 #userid#
+									,#pass#
+									,#name#
+									,#nickname#
+									,#email#
+									,#phone#
+									,#mobile#
+									)
+	</insert>
+	<select id="memberDAO.selectMemberUserId" resultClass="int">
+	SELECT count(*) FROM MEMBERINFO WHERE userid = #userid#
+	</select>
+	<select id ="memberDAO.selectMemberNickname" resultClass="int">
+	SELECT count(*) FROM MEMBERINFO WHERE nickname = #nickname#
+	</select>
+	<select id ="memberDAO.selectMemberLogin" resultClass="String">
+	select name from memberinfo where userid = #userid# and pass=#pass#
+	</select>
+	<select id ="memberDAO.selectMemberDetail" resultClass="memberVO">
+	select USERID
+			,PASS
+			,NAME
+			,NICKNAME
+			,EMAIL
+			,PHONE
+			,MOBILE
+			,MAIL
+			,SMS
+			,TO_CHAR(RDATE,'yyyy-mm-dd') RDATE
+		 from memberinfo where userid = #userid#
+	</select>
+	<update id ="memberDAO.updateMember">
+		update MEMBERINFO SET 
+					NAME = #name#,
+					NICKNAME = #nickname#,
+					EMAIL = #email#,
+					PHONE = #phone#,
+					MOBILE = #mobile#
+				where userid = #userid# 
+					and 
+					  pass = #pass#
+	</update>
+	<select id="memberDAO.selectMemberNicknamech" resultClass = "int">
+		select count(*) from memberinfo
+			where userid != #userid#
+				and
+				  nickname = #nickname#
+	</select>
+	<select id="memberDAO.selectPreventName" resultClass="String">
+		select imgname from preventImg where no =#no#
+	</select>
+	
+	<select id="memberDAO.selectMemberUseridReturn" resultClass="string">
+		select userid from memberinfo where nickname=#nickname#
+									    and  email=#email#
+	</select>
+	
+	<select id="memberDAO.selectMemberExistCount" resultClass="int">
+		select count(*) from memberinfo where userid=#userid#
+		                                  and nickname=#nickname#
+									      and email=#email# 
+	</select>
+	<update id="memberDAO.updateMemberPass">
+		UPDATE memberinfo SET pass =#pass# where userid=#userid#
+	</update>
+	<update id="memberDAO.updateMemberNewPass">
+		UPDATE memberinfo set pass = #pass2# where userid=#userid# and pass=#pass1#
+	</update>
+</sqlMap>
