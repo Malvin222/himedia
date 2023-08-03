@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AdminSpace">
+
+	<typeAlias  alias="egovMap"   type="org.egovframe.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="defaultVO" type="egov.mywork1.service.DefaultVO"/>
+	<typeAlias  alias="noticeVO"  type="egov.mywork1.service.NoticeVO"/>
+	<typeAlias  alias="memberVO"  type="egov.mywork1.service.MemberVO"/>
+	
+	<insert id="adminDAO.insertNotice">
+		INSERT INTO NOTICEBOARD(UNQ
+						  ,TITLE		<!-- 제목 -->
+						  ,PASS			<!-- 암호 -->
+						  ,NAME			<!-- 이름 -->
+						  ,CONTENT		<!-- 내용 -->
+						  ,RDATE		<!-- 날짜 -->
+						  ,EMPS			<!-- 강조 -->
+						  ) 
+					VALUES( NOTICEBOARD_SEQ.NEXTVAL
+						   ,#title#
+						   ,#pass#
+						   ,#name#
+						   ,#content#
+						   ,SYSDATE
+						   ,#emps# )
+	</insert>
+	<select id="adminDAO.selectAdminNoticeList" resultClass="egovMap">
+<!-- 	SELECT UNQ
+		  ,TITLE
+		  ,NAME
+		  ,CONTENT
+		  ,TO_CHAR(RDATE,'yyyy-MM-dd') RDATE
+		  ,HITS
+		FROM NOTICEBOARD
+			ORDER BY unq DESC -->
+      select d.*  from (
+      select rownum rn,c.* from (
+         select a.* from(                    
+            select unq
+                 ,title
+                 ,name
+                 ,hits
+                 ,emps
+                 ,to_char(rdate,'yyyy-mm-dd') rdate from NOTICEBOARD where emps = 'Y' order by unq desc ) a
+         union all
+         select b.* from(
+            select unq
+                 ,title
+                 ,name
+                 ,hits
+                 ,emps
+                 ,to_char(rdate,'yyyy-mm-dd') rdate from NOTICEBOARD where emps = 'N' order by unq desc ) b ) c
+               WHERE 
+                  1=1
+               <isNotNull property="searchCondition">
+                  <isNotEmpty property="searchCondition">
+                     AND $searchCondition$ LIKE '%$searchKeyword$%'
+                  </isNotEmpty>
+               </isNotNull>   
+               ) d
+         WHERE
+            rn BETWEEN $firstIndex$ AND $lastIndex$
+
+	</select>
+	<select id="adminDAO.selectNoticeTotal" resultClass="int">
+         SELECT COUNT(*) TOTAL FROM NOTICEBOARD
+            WHERE 1=1 
+               <isNotNull property="searchCondition">
+                     <isNotEmpty property="searchCondition">
+                        AND $searchCondition$ LIKE '%'||#searchKeyword#||'%'
+                     </isNotEmpty>
+               </isNotNull>
+
+	</select>
+	
+	<select id="adminDAO.selectNoticeDetail" resultClass="noticeVO">
+		SELECT TITLE
+			   ,CONTENT
+			   ,NAME
+			   ,TO_CHAR(RDATE,'yyyy-mm-dd') RDATE
+			   ,EMPS
+			   ,HITS
+			   ,unq
+		 FROM NOTICEBOARD
+				 WHERE UNQ = #unq#
+	</select>
+	<delete id="adminDAO.deleteNotice">
+		DELETE FROM NOTICEBOARD WHERE UNQ = #unq#
+	</delete>
+	
+		<select id="adminDAO.selectNoticeModify" resultClass="noticeVO">
+		SELECT TITLE
+			   ,CONTENT
+			   ,NAME
+			   ,TO_CHAR(RDATE,'yyyy-mm-dd') RDATE
+			   ,EMPS
+			   ,HITS
+			   ,unq
+		 FROM NOTICEBOARD
+				 WHERE UNQ = #unq#
+	</select>
+	
+	<update id="adminDAO.updateNotice">
+		UPDATE NOTICEBOARD SET TITLE=#title#, NAME=#name#, CONTENT=#content# ,EMPS = #emps#
+			WHERE UNQ = #unq#
+	</update>
+	
+	<select id="adminDAO.selectMemberList" resultClass="egovMap">
+
+      select b.*  from (
+      select rownum rn, a.* from (
+            select userid
+                 ,name
+                 ,nickname
+                 ,mobile
+                 ,to_char(rdate,'yyyy-mm-dd') rdate 
+                 ,decode(state,'1','정상','2','중지','3','탈퇴','4','삭제') state
+                 from memberinfo 
+        
+               WHERE 1=1
+               
+               <isNotNull property="searchCondition">
+                  <isNotEmpty property="searchCondition">
+                     AND $searchCondition$ LIKE '%$searchKeyword$%'
+                  </isNotEmpty>
+               </isNotNull>   
+               ) a ) b
+         WHERE
+            rn BETWEEN $firstIndex$ AND $lastIndex$
+
+	</select>
+		<select id="adminDAO.selectMemberTotal" resultClass="int">
+         SELECT COUNT(*) TOTAL FROM MEMBERINFO
+            WHERE 1=1 
+               <isNotNull property="searchCondition">
+                     <isNotEmpty property="searchCondition">
+                        AND $searchCondition$ LIKE '%'||#searchKeyword#||'%'
+                     </isNotEmpty>
+               </isNotNull>
+
+	</select>
+	
+	<select id = "adminDAO.selectMemberDetail" resultClass="MemberVO">
+	SELECT  USERID
+			,PASS
+			,NAME
+			,NICKNAME
+			,EMAIL
+			,PHONE
+			,MOBILE
+			,MAIL
+			,SMS
+			,RDATE
+			,UDATE
+			,STATE
+			,MEMO
+		From MEMBERINFO 
+			WHERE USERID = #userid#
+	</select>
+	
+	<update id = "adminDAO.updateMemberSave">
+		UPDATE MEMBERINFO SET 
+			 USERID 	= #userid#
+			,NAME		= #name#
+			,NICKNAME	= #nickname#
+			,EMAIL		= #email#
+			,PHONE		= #phone#
+			,MOBILE		= #mobile#
+			,MAIL		= #mail#
+			,SMS		= #sms#
+			,RDATE		= #rdate#
+			,STATE		= #state#
+			,MEMO		= #memo#
+		WHERE USERID = #userid#
+	</update>	
+	
+	<delete id = "adminDAO.deleteMemberUser">
+	DELETE FROM memberinfo WHERE userid=#userid#
+	</delete>
+</sqlMap>
